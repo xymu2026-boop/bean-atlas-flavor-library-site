@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>风味图书馆 · 定味科技</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="phone-frame">
+      <div class="mobile-screen" id="screen">
+
+        <!-- ============ Tab 1 封面 ============ -->
+        <section class="tab-panel is-active" data-panel="cover">
+          <div class="cover-screen">
+            <header class="cover-head">
+              <div class="brand">
+                <span class="brand-cn">风味图书馆</span>
+                <span class="brand-en">FLAVOR LIBRARY</span>
+              </div>
+              <span class="brand-by">by 定味科技</span>
+            </header>
+
+            <div class="hero">
+              <img class="hero-photo" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
+              <div class="hero-overlay"></div>
+              <div class="hero-text">
+                <span class="issue-label">ISSUE 01 · 明亮风味</span>
+                <h1 class="hero-title">世界上那些<br>明亮的咖啡风味</h1>
+                <p class="hero-sub">一杯咖啡里，可能藏着花、柑橘、红茶、蜂蜜与热带水果。</p>
+              </div>
+            </div>
+
+            <div class="featured">
+              <span class="featured-label">FEATURED FLAVOR</span>
+              <div class="featured-chips">
+                <span class="chip">茉莉</span>
+                <span class="chip">佛手柑</span>
+                <span class="chip">清茶</span>
+              </div>
+              <p class="featured-note">本期带你走进一杯像花茶一样干净、明亮的咖啡。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Tab 2 风味 ============ -->
+        <section class="tab-panel" data-panel="flavor">
+          <div class="screen-inner">
+            <span class="section-label">FLAVOR CARDS</span>
+            <h2 class="section-title">风味组合卡</h2>
+            <p class="section-lead">像翻一本杂志、收一套卡片那样，浏览不同产地与处理法带来的风味。</p>
+          </div>
+          <div class="flavor-rail" id="flavorRail"><!-- cards injected by app.js --></div>
+          <p class="rail-hint">← 横向滑动浏览风味卡 →</p>
+        </section>
+
+        <!-- ============ Tab 3 链路 ============ -->
+        <section class="tab-panel" data-panel="journey">
+          <div class="screen-inner">
+            <span class="section-label">FROM BEAN TO CUP</span>
+            <h2 class="section-title">风味链路</h2>
+            <p class="journey-quote">风味不是被添加进去的。它来自产地、处理法、烘焙与冲泡之间，一连串微小选择的叠加。</p>
+          </div>
+
+          <div class="journey-hero">
+            <img src="assets/journey-hero.jpg" alt="从产地到杯中的风味手帐" loading="lazy">
+          </div>
+
+          <div class="journey-flow">
+            <span>产地</span><i>→</i><span>品种</span><i>→</i><span>处理法</span><i>→</i><span>烘焙</span><i>→</i><span>研磨</span><i>→</i><span>冲泡</span><i>→</i><span>杯中风味</span>
+          </div>
+
+          <div class="journey-steps" id="journeySteps"><!-- steps injected --></div>
+
+          <div class="screen-inner">
+            <span class="section-label">PROCESS</span>
+            <h3 class="sub-title">处理法，如何改变一杯咖啡</h3>
+          </div>
+          <div class="process-list" id="processList"><!-- process injected --></div>
+        </section>
+
+        <!-- ============ Tab 4 偏好 ============ -->
+        <section class="tab-panel" data-panel="preference">
+          <div class="screen-inner">
+            <span class="section-label">FLAVOR PROFILE</span>
+            <h2 class="section-title">你的风味偏好</h2>
+            <p class="section-lead">收藏与浏览，会慢慢沉淀成一份属于你的风味小档案。</p>
+          </div>
+          <div class="profiles" id="profiles"><!-- profiles injected --></div>
+          <p class="profile-foot">以上为模拟画像，用于展示风味偏好如何被记录与沉淀。</p>
+        </section>
+
+        <!-- ============ Tab 5 索引 ============ -->
+        <section class="tab-panel" data-panel="index">
+          <div class="screen-inner">
+            <span class="section-label">THE LIBRARY</span>
+            <h2 class="section-title">风味索引</h2>
+            <p class="section-lead">八个一级风味家族，一座可以不断生长的风味图书馆。</p>
+          </div>
+          <div class="index-grid" id="indexGrid"><!-- index injected --></div>
+          <p class="index-foot">风味图书馆 · 持续更新中</p>
+        </section>
+
+      </div>
+
+      <!-- ============ 底部 Tab ============ -->
+      <nav class="bottom-tabs">
+        <button class="tab-btn is-active" data-tab="cover">
+          <span class="tab-ico">▢</span><span class="tab-name">封面</span>
+        </button>
+        <button class="tab-btn" data-tab="flavor">
+          <span class="tab-ico">❖</span><span class="tab-name">风味</span>
+        </button>
+        <button class="tab-btn" data-tab="journey">
+          <span class="tab-ico">⤳</span><span class="tab-name">链路</span>
+        </button>
+        <button class="tab-btn" data-tab="preference">
+          <span class="tab-ico">◍</span><span class="tab-name">偏好</span>
+        </button>
+        <button class="tab-btn" data-tab="index">
+          <span class="tab-ico">☰</span><span class="tab-name">索引</span>
+        </button>
+      </nav>
+
+      <!-- ============ 风味卡详情弹窗 ============ -->
+      <div class="detail-modal" id="detailModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+          <div class="modal-hero">
+            <span class="modal-accent" id="modalAccent"></span>
+            <img id="modalPhoto" src="" alt="风味图片">
+            <div class="modal-hero-text">
+              <h3 id="modalName"></h3>
+              <div class="modal-words" id="modalWords"></div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="modal-meta-grid">
+              <div class="meta-item"><strong>产地</strong><span id="modalOrigin"></span></div>
+              <div class="meta-item"><strong>处理法</strong><span id="modalProcess"></span></div>
+              <div class="meta-item"><strong>建议水温</strong><span id="modalTemp"></span></div>
+              <div class="meta-item"><strong>粉水比</strong><span id="modalRatio"></span></div>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-story">
+              <h4>风味手记</h4>
+              <p id="modalStory"></p>
+            </div>
+            <div class="modal-divider"></div>
+            <div class="modal-brew">
+              <h4>冲煮建议</h4>
+              <p id="modalBrew"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
