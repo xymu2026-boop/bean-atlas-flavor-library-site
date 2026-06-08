@@ -10,7 +10,7 @@ const flavorCards = [
     photo: "assets/card-floral.jpg",
     accent: "var(--tea)",
     primaryFamily: "花香",
-    filterGroup: "产地探索",
+    filterGroup: "花香茶感",
     detail: {
       story: "干香是极其优雅、高亢的茉莉花香与橙皮精油的清香。注入热水后，茉莉花的清甜如潮水般涌现，夹带着佛手柑的酸甜感。入口感觉非常像一杯刚刚冲泡好的高山绿茶或茉莉花茶，酸质非常干净柔和，尾韵持久，带有清淡的蜂蜜甜感。",
       temp: "92℃ - 93℃",
@@ -27,7 +27,7 @@ const flavorCards = [
     photo: "assets/card-citrus.jpg",
     accent: "var(--citrus)",
     primaryFamily: "柑橘明亮",
-    filterGroup: "产地探索",
+    filterGroup: "明亮柑橘",
     detail: {
       story: "这款咖啡展现了极其精致的水洗瑰夏特征。干香带有橙花与新鲜柠檬皮的清新香气。入口后，明亮的柠檬、红葡萄柚酸质迅速占领味蕾，紧接着转化为优雅的白色花香。中后段展现出红茶般润滑的茶感与细致的冰糖甜，极其优雅平衡。",
       temp: "91℃ - 92℃",
@@ -78,7 +78,7 @@ const flavorCards = [
     photo: "assets/card-honey.jpg",
     accent: "var(--honey)",
     primaryFamily: "蜂蜜甜感",
-    filterGroup: "茶感甜感",
+    filterGroup: "花香茶感",
     detail: {
       story: "温润舒缓、极具东方韵味的一杯咖啡。干香有着黄桃干与烤坚果的气息。入口后是熟透黄桃的温和酸甜，随后化为极高纯度的椴树蜜般的黏稠甜感。尾韵带有乌龙茶的清幽与丝丝茶涩，口感极具润泽感，温暖舒适。",
       temp: "91℃ - 92℃",
@@ -112,7 +112,7 @@ const flavorCards = [
     photo: "assets/card-rose.jpg",
     accent: "#d45d79",
     primaryFamily: "发酵酒感",
-    filterGroup: "莓果酒感",
+    filterGroup: "花香茶感",
     detail: {
       story: "这是一杯让人惊艳的艺术品。干香充盈着成熟红玫瑰与糖渍荔枝的香气。入口瞬间，高雅的玫瑰花香混合着荔枝多汁的果肉甜席卷口腔，中段带有一层细腻的糯米酒酿甜发酵风味。质感如果冻般丝滑，清甜醉人。",
       temp: "90℃ - 92℃",
@@ -129,9 +129,9 @@ const flavorCards = [
     photo: "assets/card-apple.jpg",
     accent: "#c05c3b",
     primaryFamily: "茶感草本",
-    filterGroup: "产地探索",
+    filterGroup: "产地代表",
     detail: {
-      story: "肯尼亚优质水洗带来的多汁酸质与扎实甜感。干香是明显的红苹果与红醋栗的香气。入口即是清脆多汁 of 红苹果酸质，随后是饱满的红糖、枫糖浆甜感。尾韵转为斯里兰卡红茶般的干净温润，生津感极强，令人垂涎。",
+      story: "肯尼亚优质水洗带来的多汁酸质与扎实甜感。干香是明显的红苹果与红醋栗的香气。入口即是清脆多汁的红苹果酸质，随后是饱满的红糖、枫糖浆甜感。尾韵转为斯里兰卡红茶般的干净温润，生津感极强，令人垂涎。",
       temp: "92℃ - 93℃",
       ratio: "1:15",
       brew: "建议使用中细研磨，高温冲煮。采用经典的 V60 滤杯以大水流冲刷，可快速提取肯尼亚标志性的清脆果酸，并在中段大水流闷蒸出厚实的枫糖回甘。"
@@ -163,7 +163,7 @@ const flavorCards = [
     photo: "assets/card-vanilla.jpg",
     accent: "#ccaa77",
     primaryFamily: "坚果可可",
-    filterGroup: "坚果可可",
+    filterGroup: "甜感柔和",
     detail: {
       story: "柔顺、甜润，如同享用一份高档的香草坚果布丁。干香散发着浓郁的夏威夷果仁与焦糖布丁甜香。入口后展现出成熟夏威夷果的丰腴油脂感，同时伴随着丝丝优雅的天然香草风味。口感圆润饱满，回甘带有焦糖奶油太妃糖的持久香甜。",
       temp: "90℃ - 91℃",
@@ -180,7 +180,7 @@ const flavorCards = [
     photo: "assets/card-white-peach.jpg",
     accent: "#f4a29e",
     primaryFamily: "茶感草本",
-    filterGroup: "产地探索",
+    filterGroup: "花香茶感",
     detail: {
       story: "结合了云南咖啡的醇厚底色与精致的核果香气。磨粉时有着诱人的成熟水蜜桃干甜香。注水后，清新的白桃汁感在口中铺开，伴随清凉的乌龙茶韵。整体酸质温和，如同一杯果甜明显的冰镇高山乌龙茶，十分温润消暑。",
       temp: "90℃ - 92℃",
@@ -197,7 +197,7 @@ const flavorCards = [
     photo: "assets/card-grapefruit-morning.jpg",
     accent: "#f0b85d",
     primaryFamily: "柑橘明亮",
-    filterGroup: "明亮花香",
+    filterGroup: "明亮柑橘",
     detail: {
       story: "充满了清晨生机的惊艳咖啡。干香带有白色野茉莉与柠檬皮的清香。入口是葡萄柚般酸甜、充满张力的明亮酸质，迅速带来生津感。中后段绿茶般的干净茶感显现，并伴随着清幽的橙花香气，口感清爽剔透。",
       temp: "91℃ - 93℃",
@@ -231,7 +231,7 @@ const flavorCards = [
     photo: "assets/card-blackcurrant-tea.jpg",
     accent: "#87325c",
     primaryFamily: "茶感草本",
-    filterGroup: "产地探索",
+    filterGroup: "产地代表",
     detail: {
       story: "肯尼亚极致双重水洗代表。干香是标志性的黑加仑、红浆果与少许香草气味。入口时，高亢、清脆的黑加仑酸质带来极强的冲击力，紧接着在口中化为浓郁的红糖和蔗糖甜。尾韵是锡兰红茶般的清爽与扎实，结构感非常强。",
       temp: "92℃ - 94℃",
@@ -287,7 +287,7 @@ const flavorCards = [
       story: "令人迷醉的深色发酵酒香。干香带有黑车厘子、白兰地酒心巧克力以及香草的幽香。入口是成熟黑樱桃的醇厚果甜，伴随着白兰地酒般微醺的喉感与可可豆碎的微苦余韵，醇厚度极高，是一杯适合静静品饮的慢热咖啡。",
       temp: "89℃ - 90℃",
       ratio: "1:14",
-      brew: "中度研磨，选用聪明滤杯或爱乐压。使用较低水温进行浸泡萃取，过滤后能够最大化保留白白兰地香气与高浓度黑巧可可的滑润，降低杂涩味道。"
+      brew: "中度研磨，选用聪明滤杯或爱乐压。使用较低水温进行浸泡萃取，过滤后能够最大化保留白兰地香气与高浓度黑巧可可的滑润，降低杂涩味道。"
     }
   },
   {
@@ -299,7 +299,7 @@ const flavorCards = [
     photo: "assets/card-toffee-hazelnut.jpg",
     accent: "#c48c5a",
     primaryFamily: "蜂蜜甜感",
-    filterGroup: "坚果可可",
+    filterGroup: "甜感柔和",
     detail: {
       story: "温暖经典、如同冬日暖阳般的极度舒适体验。干香带有太妃糖与烘烤榛果的醇香。入口温润厚实，充盈着融化太妃糖的细腻乳脂甜感，随后展现出烤榛果的奶油般香气。酸度极低，回甘如同一杯焦糖玛奇朵，饱满安定。",
       temp: "88℃ - 90℃",
@@ -350,7 +350,7 @@ const flavorCards = [
     photo: "assets/card-green-apple-lemongrass.jpg",
     accent: "#8cba82",
     primaryFamily: "柑橘明亮",
-    filterGroup: "明亮花香",
+    filterGroup: "明亮柑橘",
     detail: {
       story: "带来夏日清风般凉爽的一款杰作。干香是新鲜青苹果切片与淡淡柠檬草药草的清新气味。入口是脆爽、多汁的青苹果酸甜，伴随着柠檬草精油的特有清香，尾韵如同一杯干净的冷萃绿茶，生津止渴，空灵而轻盈。",
       temp: "91℃ - 92℃",
@@ -367,7 +367,7 @@ const flavorCards = [
     photo: "assets/card-spice-dark-chocolate.jpg",
     accent: "#453225",
     primaryFamily: "坚果可可",
-    filterGroup: "产地探索",
+    filterGroup: "产地代表",
     detail: {
       story: "苏门答腊传统湿刨法所带来的厚重与神秘。干香散发着草药、肉桂、雪松木与浓郁黑巧克力的奇特香气。入口口感极其厚实、醇滑，带有些许烟熏木质感，中段展开可可的苦甜与肉桂的微辛，风味低沉而极具深度。",
       temp: "88℃ - 90℃",
@@ -441,6 +441,126 @@ const indexGroups = [
   { name: "发酵酒感", words: ["葡萄酒", "白兰地", "酒酿", "发酵水果"],  color: "#7a4f6b" }
 ];
 
+const topicPreviews = [
+  {
+    label: "NEXT ISSUE",
+    name: "厌氧处理的果酒感",
+    desc: "从莓果、香槟到白兰地，理解发酵如何把咖啡推向更鲜明的记忆点。",
+    category: "莓果酒感",
+    color: "var(--cherry)"
+  },
+  {
+    label: "ORIGIN NOTE",
+    name: "云南的茶感与甜感",
+    desc: "用白桃、乌龙和蜂蜜做线索，读懂本土产地里更温柔的一面。",
+    category: "花香茶感",
+    color: "var(--tea)"
+  },
+  {
+    label: "TASTE ROUTE",
+    name: "低酸甜感路线",
+    desc: "为喜欢稳定、圆润、坚果可可调性的人，整理一条更舒服的风味路径。",
+    category: "甜感柔和",
+    color: "var(--honey)"
+  }
+];
+
+let activeFlavorCategory = "全部";
+
+function getPrimaryOrigin(origin) {
+  return origin.split("/")[0].trim();
+}
+
+function getAvifPath(photo) {
+  return photo.replace(/\.(jpe?g|png)$/i, ".avif");
+}
+
+function getFlavorAssetStats() {
+  return {
+    cardCount: flavorCards.length,
+    familyCount: new Set(flavorCards.map(card => card.primaryFamily)).size,
+    originCount: new Set(flavorCards.map(card => getPrimaryOrigin(card.origin))).size
+  };
+}
+
+function renderAssetStats() {
+  const assetStats = document.getElementById("assetStats");
+  if (!assetStats) return;
+
+  const stats = getFlavorAssetStats();
+  assetStats.innerHTML = `
+    <div class="cover-stat">
+      <strong>${stats.cardCount}</strong>
+      <span>风味卡</span>
+    </div>
+    <div class="cover-stat">
+      <strong>${stats.familyCount}</strong>
+      <span>风味家族</span>
+    </div>
+    <div class="cover-stat">
+      <strong>${stats.originCount}</strong>
+      <span>产地线索</span>
+    </div>`;
+}
+
+function getFamilyColor(familyName) {
+  return indexGroups.find(group => group.name === familyName)?.color || "var(--coffee)";
+}
+
+function countBy(items, getKey) {
+  return items.reduce((acc, item) => {
+    const key = getKey(item);
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+function sortCounts(counts) {
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+}
+
+function getCardsByNames(names) {
+  return names
+    .map(name => flavorCards.find(card => card.name === name))
+    .filter(Boolean);
+}
+
+function getSimilarityReason(source, candidate) {
+  if (source.primaryFamily === candidate.primaryFamily) return `同属${source.primaryFamily}`;
+  if (source.filterGroup === candidate.filterGroup) return `都在${source.filterGroup}路线里`;
+  if (getPrimaryOrigin(source.origin) === getPrimaryOrigin(candidate.origin)) return `同样来自${getPrimaryOrigin(source.origin)}`;
+
+  const sharedWord = candidate.flavorWords.find(word => source.flavorWords.includes(word));
+  return sharedWord ? `都带有${sharedWord}线索` : "相近的阅读路径";
+}
+
+function getSimilarFlavorCards(sourceIndex, limit = 3) {
+  const source = flavorCards[sourceIndex];
+  if (!source) return [];
+
+  return flavorCards
+    .map((card, index) => {
+      if (index === sourceIndex) return null;
+      const sharedWords = card.flavorWords.filter(word => source.flavorWords.includes(word)).length;
+      const sameOrigin = getPrimaryOrigin(card.origin) === getPrimaryOrigin(source.origin) ? 1 : 0;
+      const score =
+        (card.primaryFamily === source.primaryFamily ? 6 : 0) +
+        (card.filterGroup === source.filterGroup ? 4 : 0) +
+        (sameOrigin ? 2 : 0) +
+        sharedWords * 2;
+
+      return {
+        ...card,
+        originalIndex: index,
+        score,
+        reason: getSimilarityReason(source, card)
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score || a.originalIndex - b.originalIndex)
+    .slice(0, limit);
+}
+
 /* ---------- 本地存储逻辑 ---------- */
 function getSavedFlavors() {
   try {
@@ -460,7 +580,8 @@ function saveFlavors(savedList) {
 }
 
 /* ---------- 渲染：风味卡 ---------- */
-function renderFlavorCards(filterCategory = "全部") {
+function renderFlavorCards(filterCategory = activeFlavorCategory) {
+  activeFlavorCategory = filterCategory;
   const savedFlavors = getSavedFlavors();
   const rail = document.getElementById("flavorRail");
 
@@ -481,7 +602,10 @@ function renderFlavorCards(filterCategory = "全部") {
     <article class="flavor-card" data-index="${c.originalIndex}">
       <div class="fc-photo">
         <span class="fc-accent" style="background:${c.accent}"></span>
-        <img src="${c.photo}" alt="${c.name}" loading="lazy">
+        <picture>
+          <source srcset="${getAvifPath(c.photo)}" type="image/avif">
+          <img src="${c.photo}" alt="${c.name}" loading="lazy">
+        </picture>
         <button class="bookmark-button ${isSaved ? 'is-saved' : ''}" data-card="${c.originalIndex}" aria-label="收藏 ${c.name}">
           ${isSaved ? '★' : '⌖'}
         </button>
@@ -513,6 +637,12 @@ function renderFlavorCards(filterCategory = "全部") {
         savedFlavors = savedFlavors.filter(name => name !== card.name);
       }
       saveFlavors(savedFlavors);
+      renderProfiles();
+
+      if (document.querySelector('.tab-panel[data-panel="preference"]').classList.contains("is-active")) {
+        document.querySelectorAll('.pb-fill').forEach(el => el.style.width = "0");
+        requestAnimationFrame(() => requestAnimationFrame(animateBars));
+      }
     });
   });
 
@@ -527,11 +657,65 @@ function renderFlavorCards(filterCategory = "全部") {
   });
 }
 
+function setActiveFlavorCategory(category, options = {}) {
+  activeFlavorCategory = category;
+  document.querySelectorAll(".category-chip").forEach(chip => {
+    chip.classList.toggle("is-active", chip.dataset.category === category);
+  });
+  renderFlavorCards(category);
+
+  const rail = document.getElementById("flavorRail");
+  if (rail && options.scrollToStart !== false) {
+    rail.scrollTo({ left: 0, behavior: options.behavior || "smooth" });
+  }
+}
+
+function setupCategoryChips() {
+  const categoryChips = document.getElementById("categoryChips");
+  if (!categoryChips) return;
+
+  categoryChips.querySelectorAll(".category-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      setActiveFlavorCategory(chip.dataset.category || "全部");
+    });
+  });
+}
+
+function renderTopicPreview() {
+  const topicRoot = document.getElementById("topicPreview");
+  if (!topicRoot) return;
+
+  topicRoot.innerHTML = `
+    <div class="topic-head">
+      <h3 class="topic-title">下一期可以怎么读</h3>
+      <span class="topic-kicker">EDITOR'S ROUTES</span>
+    </div>
+    <div class="topic-list">
+      ${topicPreviews.map(topic => `
+        <article class="topic-card" data-category="${topic.category}" style="--topic-color:${topic.color}">
+          <span class="topic-meta">${topic.label}</span>
+          <h4 class="topic-name">${topic.name}</h4>
+          <p class="topic-desc">${topic.desc}</p>
+          <span class="topic-link">查看这条风味路线</span>
+        </article>`).join("")}
+    </div>`;
+
+  topicRoot.querySelectorAll(".topic-card").forEach(card => {
+    card.addEventListener("click", () => {
+      setActiveFlavorCategory(card.dataset.category || "全部");
+      document.getElementById("flavorRail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
 /* ---------- 渲染：链路 ---------- */
 function renderJourney() {
   document.getElementById("journeySteps").innerHTML = journeySteps.map(s => `
     <div class="journey-step">
-      <img src="${s.photo}" alt="${s.name}" loading="lazy">
+      <picture>
+        <source srcset="${getAvifPath(s.photo)}" type="image/avif">
+        <img src="${s.photo}" alt="${s.name}" loading="lazy">
+      </picture>
       <div class="js-body">
         <div class="js-label">${s.label}</div>
         <div class="js-name">${s.name}</div>
@@ -549,7 +733,17 @@ function renderJourney() {
 
 /* ---------- 渲染：偏好 ---------- */
 function renderProfiles() {
-  document.getElementById("profiles").innerHTML = profiles.map(p => `
+  const profileRoot = document.getElementById("profiles");
+  const profileFoot = document.getElementById("profileFoot");
+  const savedCards = getCardsByNames(getSavedFlavors());
+
+  if (!savedCards.length) {
+    profileRoot.innerHTML = `
+      <div class="profile-empty">
+        <div class="profile-empty-title">先收藏几张风味卡</div>
+        <p>喜欢花香、果汁感，还是温暖的坚果可可？收藏会让这里慢慢长出你的风味小档案。</p>
+      </div>
+      ${profiles.map(p => `
     <div class="profile-card">
       <div class="profile-head">
         <span class="profile-name">${p.name}</span>
@@ -565,16 +759,89 @@ function renderProfiles() {
         <span class="rec-label">推荐</span>
         ${p.rec.map(r => `<span class="rec-chip">${r}</span>`).join("")}
       </div>
-    </div>`).join("");
+    </div>`).join("")}`;
+
+    if (profileFoot) {
+      profileFoot.textContent = "未收藏时展示模拟画像；收藏后会切换为你的动态风味偏好。";
+    }
+    return;
+  }
+
+  const familyCounts = sortCounts(countBy(savedCards, card => card.primaryFamily));
+  const groupCounts = sortCounts(countBy(savedCards, card => card.filterGroup));
+  const wordCounts = sortCounts(savedCards.reduce((acc, card) => {
+    card.flavorWords.forEach(word => {
+      acc[word] = (acc[word] || 0) + 1;
+    });
+    return acc;
+  }, {}));
+
+  const total = savedCards.length;
+  const topFamily = familyCounts[0][0];
+  const topGroup = groupCounts[0][0];
+  const topWords = wordCounts.slice(0, 4).map(([word]) => word);
+  const bars = familyCounts.slice(0, 4).map(([family, count]) => ({
+    label: family,
+    pct: Math.round(count / total * 100),
+    color: getFamilyColor(family)
+  }));
+
+  const recommended = flavorCards
+    .map((card, index) => ({ ...card, originalIndex: index }))
+    .filter(card => !savedCards.some(saved => saved.name === card.name))
+    .map(card => ({
+      ...card,
+      score:
+        (card.primaryFamily === topFamily ? 5 : 0) +
+        (card.filterGroup === topGroup ? 3 : 0) +
+        card.flavorWords.filter(word => topWords.includes(word)).length * 2
+    }))
+    .sort((a, b) => b.score - a.score || a.originalIndex - b.originalIndex)
+    .slice(0, 3);
+
+  profileRoot.innerHTML = `
+    <div class="profile-card">
+      <div class="profile-head">
+        <span class="profile-name">${topGroup}读者</span>
+        <span class="profile-tag">LIVE PROFILE</span>
+      </div>
+      <p class="profile-note">基于你收藏的 ${total} 张风味卡生成。当前最明显的偏好是「${topFamily}」，常出现的风味线索包括 ${topWords.join("、")}。</p>
+      ${bars.map(b => `
+        <div class="preference-bar">
+          <div class="pb-top"><span>${b.label}</span><span class="pb-pct">${b.pct}%</span></div>
+          <div class="pb-track"><div class="pb-fill" data-pct="${b.pct}" style="background:${b.color}"></div></div>
+        </div>`).join("")}
+      <div class="profile-rec">
+        <span class="rec-label">继续读</span>
+        ${recommended.map(card => `<button class="rec-chip rec-button" data-card="${card.originalIndex}" type="button">${card.name}</button>`).join("")}
+      </div>
+      <div class="profile-saved-note">已收藏：${savedCards.map(card => card.name).join("、")}</div>
+    </div>`;
+
+  profileRoot.querySelectorAll(".rec-button").forEach(button => {
+    button.addEventListener("click", () => {
+      const cardIndex = parseInt(button.dataset.card);
+      if (typeof window.openFlavorDetail === "function") {
+        window.openFlavorDetail(cardIndex);
+      }
+    });
+  });
+
+  if (profileFoot) {
+    profileFoot.textContent = "偏好仅保存在本机浏览器，用于展示风味内容如何被沉淀成用户兴趣资产。";
+  }
 }
 
 /* ---------- 渲染：索引 ---------- */
 function renderIndex() {
-  document.getElementById("indexGrid").innerHTML = indexGroups.map(g => `
-    <div class="index-group" style="--g-color:${g.color}">
-      <div class="ig-name">${g.name}</div>
+  document.getElementById("indexGrid").innerHTML = indexGroups.map(g => {
+    const count = flavorCards.filter(card => card.primaryFamily === g.name).length;
+    return `
+    <div class="index-group" data-family="${g.name}" style="--g-color:${g.color}">
+      <div class="ig-name"><span>${g.name}</span><span class="ig-count">${count}</span></div>
       <div class="ig-words">${g.words.map(w => `<span class="ig-word">${w}</span>`).join("")}</div>
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
 /* ---------- 偏好比例条入场动画 ---------- */
@@ -617,6 +884,7 @@ function initModal() {
   const modal = document.getElementById("detailModal");
   const overlay = document.getElementById("modalOverlay");
   const closeBtn = document.getElementById("modalClose");
+  const modalContent = modal.querySelector(".modal-content");
 
   function closeModal() {
     modal.classList.remove("is-active");
@@ -631,6 +899,7 @@ function initModal() {
     if (!card) return;
 
     document.getElementById("modalAccent").style.background = card.accent;
+    document.getElementById("modalPhotoAvif").srcset = getAvifPath(card.photo);
     document.getElementById("modalPhoto").src = card.photo;
     document.getElementById("modalPhoto").alt = card.name;
     document.getElementById("modalName").textContent = card.name;
@@ -641,10 +910,59 @@ function initModal() {
     document.getElementById("modalRatio").textContent = card.detail.ratio;
     document.getElementById("modalStory").textContent = card.detail.story;
     document.getElementById("modalBrew").textContent = card.detail.brew;
+    renderRelatedFlavors(index);
 
     modal.classList.add("is-active");
     document.getElementById("screen").style.overflowY = "hidden";
+    if (modalContent) modalContent.scrollTop = 0;
   };
+}
+
+function renderRelatedFlavors(index) {
+  const relatedRoot = document.getElementById("modalRelated");
+  if (!relatedRoot) return;
+
+  const relatedCards = getSimilarFlavorCards(index, 3);
+  relatedRoot.innerHTML = `
+    <div class="modal-divider"></div>
+    <div class="related-head">
+      <h4>继续阅读</h4>
+      <span>SIMILAR NOTES</span>
+    </div>
+    <div class="related-list">
+      ${relatedCards.map(card => `
+        <article class="related-card" data-card="${card.originalIndex}">
+          <picture>
+            <source srcset="${getAvifPath(card.photo)}" type="image/avif">
+            <img src="${card.photo}" alt="${card.name}" loading="lazy">
+          </picture>
+          <div>
+            <div class="related-name">${card.name}</div>
+            <div class="related-reason">${card.reason}</div>
+            <div class="related-words">${card.flavorWords.slice(0, 3).map(word => `<span>${word}</span>`).join("")}</div>
+          </div>
+        </article>`).join("")}
+    </div>`;
+
+  relatedRoot.querySelectorAll(".related-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const nextIndex = parseInt(card.dataset.card);
+      if (typeof window.openFlavorDetail === "function") {
+        window.openFlavorDetail(nextIndex);
+      }
+    });
+  });
+}
+
+function setupCoverEntry() {
+  const startExplore = document.getElementById("startExplore");
+  const flavorTabBtn = document.querySelector('.tab-btn[data-tab="flavor"]');
+
+  if (!startExplore || !flavorTabBtn) return;
+
+  startExplore.addEventListener("click", () => {
+    flavorTabBtn.click();
+  });
 }
 
 /* ---------- 索引与风味联动 ---------- */
@@ -652,7 +970,7 @@ function setupIndexLink() {
   const indexGrid = document.getElementById("indexGrid");
   indexGrid.querySelectorAll(".index-group").forEach(group => {
     group.addEventListener("click", () => {
-      const familyName = group.querySelector(".ig-name").textContent.trim();
+      const familyName = group.dataset.family;
       const cardIndex = flavorCards.findIndex(c => c.primaryFamily === familyName);
       if (cardIndex !== -1) {
         // 1. 切换到风味 Tab
@@ -661,11 +979,12 @@ function setupIndexLink() {
           flavorTabBtn.click();
         }
 
+        setActiveFlavorCategory("全部", { scrollToStart: false, behavior: "auto" });
+
         // 2. 平滑滚动到对应卡片
         setTimeout(() => {
           const rail = document.getElementById("flavorRail");
-          const cards = rail.querySelectorAll(".flavor-card");
-          const targetCard = cards[cardIndex];
+          const targetCard = rail.querySelector(`.flavor-card[data-index="${cardIndex}"]`);
           if (targetCard) {
             targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
 
@@ -682,10 +1001,14 @@ function setupIndexLink() {
 }
 
 /* ---------- init ---------- */
+renderAssetStats();
 renderFlavorCards();
+renderTopicPreview();
 renderJourney();
 renderProfiles();
 renderIndex();
 setupTabs();
+setupCoverEntry();
+setupCategoryChips();
 initModal();
 setupIndexLink();

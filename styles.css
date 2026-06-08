@@ -119,7 +119,8 @@ body {
   border-radius: 14px;
   overflow: hidden;
 }
-.hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo { width: 100%; height: 100%; display: block; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(20,12,8,.78) 0%, rgba(20,12,8,.18) 42%, rgba(20,12,8,0) 70%);
@@ -147,6 +148,57 @@ body {
   background: var(--cream);
 }
 .featured-note { font-size: 14.5px; line-height: 1.8; color: var(--muted); }
+.cover-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 20px 0 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.cover-stat {
+  padding: 13px 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-right: 1px solid var(--line);
+}
+.cover-stat:last-child { border-right: none; }
+.cover-stat strong {
+  font-family: var(--sans);
+  font-size: 19px;
+  line-height: 1;
+  color: var(--coffee);
+}
+.cover-stat span {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--muted);
+}
+.cover-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.cover-cta {
+  flex: 0 0 auto;
+  border: none;
+  border-radius: 999px;
+  padding: 9px 16px 10px;
+  background: var(--coffee);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 22px -16px rgba(36, 24, 18, .75);
+}
+.cover-cta:active { transform: scale(.97); }
+.cover-action-note {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
 
 /* ======================================================= */
 /* Tab 2 风味                                              */
@@ -213,6 +265,7 @@ body {
 }
 .flavor-card:active { transform: translateY(-3px); }
 .fc-photo { position: relative; height: 232px; overflow: hidden; }
+.fc-photo picture { display: block; width: 100%; height: 100%; }
 .fc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fc-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
 .bookmark-button {
@@ -243,6 +296,54 @@ body {
 .fc-meta b { color: var(--ink); font-weight: 600; }
 .fc-desc { font-size: 14.5px; line-height: 1.78; color: var(--ink); margin-top: auto; }
 .rail-hint { text-align: center; font-family: var(--sans); font-size: 11.5px; color: var(--muted); margin-top: 10px; letter-spacing: .04em; }
+.topic-preview { padding: 26px 24px 0; }
+.topic-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.topic-title { font-size: 19px; font-weight: 700; }
+.topic-kicker {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: .16em;
+  color: var(--muted);
+}
+.topic-list { display: flex; flex-direction: column; gap: 12px; }
+.topic-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream);
+  padding: 16px 16px 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.topic-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+  background: var(--topic-color, var(--coffee));
+}
+.topic-meta {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.topic-name { font-size: 18px; font-weight: 700; margin: 7px 0 5px; }
+.topic-desc { font-size: 13.5px; line-height: 1.65; color: var(--muted); }
+.topic-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--coffee);
+}
 
 /* ======================================================= */
 /* Tab 3 链路                                              */
@@ -250,6 +351,7 @@ body {
 .tab-panel[data-panel="journey"] .screen-inner { padding-top: 26px; }
 .journey-quote { font-size: 16px; line-height: 1.85; color: var(--ink); margin-top: 12px; font-style: italic; }
 .journey-hero { margin: 22px 16px 0; border-radius: 12px; overflow: hidden; height: 300px; }
+.journey-hero picture { display: block; width: 100%; height: 100%; }
 .journey-hero img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .journey-flow {
   display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
@@ -259,6 +361,7 @@ body {
 .journey-flow i { color: var(--citrus); font-style: normal; }
 .journey-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 14px 24px 8px; }
 .journey-step { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--cream); }
+.journey-step picture { display: block; width: 100%; height: 96px; }
 .journey-step img { width: 100%; height: 96px; object-fit: cover; display: block; }
 .js-body { padding: 11px 13px 13px; }
 .journey-step .js-label { font-family: var(--sans); font-size: 10px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; }
@@ -290,6 +393,25 @@ body {
 .profile-rec { display: flex; align-items: center; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
 .profile-rec .rec-label { font-family: var(--sans); font-size: 11px; color: var(--muted); letter-spacing: .1em; }
 .rec-chip { font-family: var(--sans); font-size: 12px; padding: 5px 12px; border-radius: 999px; background: var(--coffee); color: var(--cream); }
+.rec-button { border: none; cursor: pointer; }
+.rec-button:active { transform: scale(.97); }
+.profile-saved-note {
+  margin-top: 15px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.profile-empty {
+  border: 1px dashed rgba(36,24,18,.2);
+  border-radius: 14px;
+  padding: 18px;
+  background: rgba(255,250,241,.55);
+}
+.profile-empty-title { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.profile-empty p { font-size: 13.5px; line-height: 1.7; color: var(--muted); }
 .profile-foot, .index-foot { text-align: center; font-family: var(--sans); font-size: 11.5px; color: var(--muted); padding: 8px 24px 0; }
 
 /* ======================================================= */
@@ -420,6 +542,11 @@ body {
   overflow: hidden;
   flex-shrink: 0;
 }
+.modal-hero picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .modal-hero img {
   width: 100%; height: 100%;
   object-fit: cover; display: block;
@@ -494,6 +621,70 @@ body {
 .modal-story p, .modal-brew p {
   font-size: 14px; line-height: 1.8;
   color: var(--ink);
+}
+.modal-related { margin-top: 22px; }
+.related-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.related-head h4 {
+  font-size: 16px;
+  color: var(--coffee);
+}
+.related-head span {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: .12em;
+  color: var(--muted);
+}
+.related-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.related-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream);
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 12px;
+  padding: 10px;
+  cursor: pointer;
+}
+.related-card picture {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+.related-card img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.related-name { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+.related-reason {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.related-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+.related-words span {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--paper-warm);
+  color: var(--coffee);
 }
 
 /* ---------- 真实移动端：铺满视口 ---------- */

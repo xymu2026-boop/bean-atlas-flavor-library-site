@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>风味图书馆 · 定味科技</title>
+<link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,7 +27,10 @@
             </header>
 
             <div class="hero">
-              <img class="hero-photo" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
+              <picture class="hero-photo">
+                <source srcset="assets/cover-hero.avif" type="image/avif">
+                <img src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
+              </picture>
               <div class="hero-overlay"></div>
               <div class="hero-text">
                 <span class="issue-label">ISSUE 01 · 明亮风味</span>
@@ -43,6 +47,24 @@
                 <span class="chip">清茶</span>
               </div>
               <p class="featured-note">本期带你走进一杯像花茶一样干净、明亮的咖啡。</p>
+              <div class="cover-stats" id="assetStats" aria-label="风味图书馆内容统计">
+                <div class="cover-stat">
+                  <strong>22</strong>
+                  <span>风味卡</span>
+                </div>
+                <div class="cover-stat">
+                  <strong>8</strong>
+                  <span>风味家族</span>
+                </div>
+                <div class="cover-stat">
+                  <strong>12</strong>
+                  <span>产地线索</span>
+                </div>
+              </div>
+              <div class="cover-actions">
+                <button class="cover-cta" id="startExplore" type="button">进入本期风味</button>
+                <span class="cover-action-note">收藏喜欢的组合，沉淀自己的风味偏好。</span>
+              </div>
             </div>
           </div>
         </section>
@@ -59,17 +81,19 @@
           <div class="category-chips-container">
             <div class="category-chips" id="categoryChips">
               <button class="category-chip is-active" data-category="全部">全部</button>
-              <button class="category-chip" data-category="明亮花香">明亮花香</button>
+              <button class="category-chip" data-category="花香茶感">花香茶感</button>
+              <button class="category-chip" data-category="明亮柑橘">明亮柑橘</button>
               <button class="category-chip" data-category="莓果酒感">莓果酒感</button>
               <button class="category-chip" data-category="热带果汁">热带果汁</button>
-              <button class="category-chip" data-category="茶感甜感">茶感甜感</button>
+              <button class="category-chip" data-category="甜感柔和">甜感柔和</button>
               <button class="category-chip" data-category="坚果可可">坚果可可</button>
-              <button class="category-chip" data-category="产地探索">产地探索</button>
+              <button class="category-chip" data-category="产地代表">产地代表</button>
             </div>
           </div>
 
           <div class="flavor-rail" id="flavorRail"><!-- cards injected by app.js --></div>
           <p class="rail-hint">← 横向滑动浏览风味卡 →</p>
+          <div class="topic-preview" id="topicPreview"><!-- topics injected by app.js --></div>
         </section>
 
         <!-- ============ Tab 3 链路 ============ -->
@@ -81,7 +105,10 @@
           </div>
 
           <div class="journey-hero">
-            <img src="assets/journey-hero.jpg" alt="从产地到杯中的风味手帐" loading="lazy">
+            <picture>
+              <source srcset="assets/journey-hero.avif" type="image/avif">
+              <img src="assets/journey-hero.jpg" alt="从产地到杯中的风味手帐" loading="lazy">
+            </picture>
           </div>
 
           <div class="journey-flow">
@@ -105,7 +132,7 @@
             <p class="section-lead">收藏与浏览，会慢慢沉淀成一份属于你的风味小档案。</p>
           </div>
           <div class="profiles" id="profiles"><!-- profiles injected --></div>
-          <p class="profile-foot">以上为模拟画像，用于展示风味偏好如何被记录与沉淀。</p>
+          <p class="profile-foot" id="profileFoot">以上为模拟画像，用于展示风味偏好如何被记录与沉淀。</p>
         </section>
 
         <!-- ============ Tab 5 索引 ============ -->
@@ -147,7 +174,10 @@
           <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
           <div class="modal-hero">
             <span class="modal-accent" id="modalAccent"></span>
-            <img id="modalPhoto" src="" alt="风味图片">
+            <picture>
+              <source id="modalPhotoAvif" srcset="" type="image/avif">
+              <img id="modalPhoto" src="" alt="风味图片">
+            </picture>
             <div class="modal-hero-text">
               <h3 id="modalName"></h3>
               <div class="modal-words" id="modalWords"></div>
@@ -170,6 +200,7 @@
               <h4>冲煮建议</h4>
               <p id="modalBrew"></p>
             </div>
+            <div class="modal-related" id="modalRelated"><!-- related flavors injected --></div>
           </div>
         </div>
       </div>
