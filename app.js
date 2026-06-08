@@ -441,27 +441,69 @@ const indexGroups = [
   { name: "发酵酒感", words: ["葡萄酒", "白兰地", "酒酿", "发酵水果"],  color: "#7a4f6b" }
 ];
 
+const demoRoutes = [
+  {
+    step: "01",
+    name: "浏览风味卡",
+    desc: "先看到精品咖啡不止苦和酸，而是一套可阅读的风味语言。",
+    tab: "flavor"
+  },
+  {
+    step: "02",
+    name: "收藏喜欢的味道",
+    desc: "用收藏模拟兴趣信号，把喜欢的风味组合沉淀下来。",
+    tab: "flavor"
+  },
+  {
+    step: "03",
+    name: "生成风味偏好",
+    desc: "从收藏里生成偏好画像，展示内容运营和用户分层的可能性。",
+    tab: "preference"
+  }
+];
+
 const topicPreviews = [
   {
+    id: "anaerobic",
     label: "NEXT ISSUE",
     name: "厌氧处理的果酒感",
     desc: "从莓果、香槟到白兰地，理解发酵如何把咖啡推向更鲜明的记忆点。",
     category: "莓果酒感",
-    color: "var(--cherry)"
+    color: "var(--cherry)",
+    cardNames: ["莓果酒香", "黄桃香槟", "樱桃白兰地", "酒香朗姆"],
+    points: [
+      ["处理法", "厌氧会放大果香、酒感与发酵甜，让一杯咖啡更像果酒或甜点。"],
+      ["适合人群", "适合喜欢强记忆点、香气外放、想要惊喜感的精品咖啡用户。"],
+      ["冲煮提醒", "水温不宜过高，保留前中段果香，避免尾段发酵感过重。"]
+    ]
   },
   {
+    id: "yunnan",
     label: "ORIGIN NOTE",
     name: "云南的茶感与甜感",
     desc: "用白桃、乌龙和蜂蜜做线索，读懂本土产地里更温柔的一面。",
     category: "花香茶感",
-    color: "var(--tea)"
+    color: "var(--tea)",
+    cardNames: ["蜂蜜乌龙", "白桃乌龙", "花香清茶", "玫瑰荔枝"],
+    points: [
+      ["产地表达", "云南咖啡不只适合做稳定口粮，也能表达温润茶感、核果甜与蜂蜜感。"],
+      ["内容价值", "本土产地更容易形成长期栏目，适合做产地故事和风味教育。"],
+      ["风味入口", "茶感、白桃、蜂蜜这些词更容易降低精品咖啡的理解门槛。"]
+    ]
   },
   {
+    id: "comfort",
     label: "TASTE ROUTE",
     name: "低酸甜感路线",
     desc: "为喜欢稳定、圆润、坚果可可调性的人，整理一条更舒服的风味路径。",
     category: "甜感柔和",
-    color: "var(--honey)"
+    color: "var(--honey)",
+    cardNames: ["太妃榛果", "香草坚果", "榛果可可", "杏仁奶油"],
+    points: [
+      ["味觉偏好", "低酸、甜感、坚果可可是很多用户从商业咖啡进入精品咖啡的舒适路线。"],
+      ["推荐逻辑", "这类风味适合承接新手，也适合做复购和日常饮用场景的内容资产。"],
+      ["冲煮提醒", "稍低水温和更稳定的萃取，可以保留甜感，减少苦味和木质涩感。"]
+    ]
   }
 ];
 
@@ -681,6 +723,35 @@ function setupCategoryChips() {
   });
 }
 
+function renderDemoRoute() {
+  const routeRoot = document.getElementById("demoRoute");
+  if (!routeRoot) return;
+
+  routeRoot.innerHTML = `
+    <div class="route-head">
+      <span class="route-title">本期阅读路线</span>
+      <span class="route-label">DEMO PATH</span>
+    </div>
+    <div class="route-steps">
+      ${demoRoutes.map(route => `
+        <button class="route-step" data-tab="${route.tab}" type="button">
+          <span class="route-num">${route.step}</span>
+          <span>
+            <span class="route-name">${route.name}</span>
+            <span class="route-desc">${route.desc}</span>
+          </span>
+        </button>`).join("")}
+    </div>`;
+
+  routeRoot.querySelectorAll(".route-step").forEach(step => {
+    step.addEventListener("click", () => {
+      const target = step.dataset.tab;
+      const tabButton = document.querySelector(`.tab-btn[data-tab="${target}"]`);
+      if (tabButton) tabButton.click();
+    });
+  });
+}
+
 function renderTopicPreview() {
   const topicRoot = document.getElementById("topicPreview");
   if (!topicRoot) return;
@@ -692,20 +763,105 @@ function renderTopicPreview() {
     </div>
     <div class="topic-list">
       ${topicPreviews.map(topic => `
-        <article class="topic-card" data-category="${topic.category}" style="--topic-color:${topic.color}">
+        <article class="topic-card" data-topic="${topic.id}" data-category="${topic.category}" style="--topic-color:${topic.color}">
           <span class="topic-meta">${topic.label}</span>
           <h4 class="topic-name">${topic.name}</h4>
           <p class="topic-desc">${topic.desc}</p>
-          <span class="topic-link">查看这条风味路线</span>
+          <span class="topic-link">打开专题阅读</span>
         </article>`).join("")}
     </div>`;
 
   topicRoot.querySelectorAll(".topic-card").forEach(card => {
     card.addEventListener("click", () => {
-      setActiveFlavorCategory(card.dataset.category || "全部");
-      document.getElementById("flavorRail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      openTopicIssue(card.dataset.topic);
     });
   });
+}
+
+function setupTopicModal() {
+  const modal = document.getElementById("topicModal");
+  const overlay = document.getElementById("topicModalOverlay");
+  const closeButton = document.getElementById("topicModalClose");
+
+  if (!modal || !overlay || !closeButton) return;
+
+  const close = () => closeTopicIssue();
+  overlay.addEventListener("click", close);
+  closeButton.addEventListener("click", close);
+}
+
+function openTopicIssue(topicId) {
+  const topic = topicPreviews.find(item => item.id === topicId);
+  const modal = document.getElementById("topicModal");
+  const body = document.getElementById("topicModalBody");
+  const screen = document.getElementById("screen");
+  if (!topic || !modal || !body) return;
+
+  const cards = topic.cardNames
+    .map(name => {
+      const index = flavorCards.findIndex(card => card.name === name);
+      return index >= 0 ? { ...flavorCards[index], originalIndex: index } : null;
+    })
+    .filter(Boolean);
+
+  body.innerHTML = `
+    <span class="issue-label">${topic.label}</span>
+    <h3 class="issue-title">${topic.name}</h3>
+    <p class="issue-lead">${topic.desc}</p>
+    <div class="issue-points">
+      ${topic.points.map(point => `
+        <div class="issue-point">
+          <strong>${point[0]}</strong>
+          <span>${point[1]}</span>
+        </div>`).join("")}
+    </div>
+    <h4 class="issue-section-title">本专题风味卡</h4>
+    <div class="issue-card-list">
+      ${cards.map(card => `
+        <article class="issue-card" data-card="${card.originalIndex}">
+          <picture>
+            <source srcset="${getAvifPath(card.photo)}" type="image/avif">
+            <img src="${card.photo}" alt="${card.name}" loading="lazy">
+          </picture>
+          <div class="issue-card-body">
+            <div class="issue-card-name">${card.name}</div>
+            <div class="issue-card-meta">${card.flavorWords.join(" / ")}<br>${getPrimaryOrigin(card.origin)} · ${card.process}</div>
+          </div>
+        </article>`).join("")}
+    </div>
+    <div class="issue-action-row">
+      <button class="issue-filter-btn" data-category="${topic.category}" type="button">查看这条风味路线</button>
+    </div>`;
+
+  body.querySelectorAll(".issue-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const cardIndex = parseInt(card.dataset.card);
+      closeTopicIssue();
+      if (typeof window.openFlavorDetail === "function") {
+        window.openFlavorDetail(cardIndex);
+      }
+    });
+  });
+
+  body.querySelector(".issue-filter-btn")?.addEventListener("click", () => {
+    closeTopicIssue();
+    setActiveFlavorCategory(topic.category);
+    document.getElementById("flavorRail")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  modal.classList.add("is-active");
+  if (screen) screen.style.overflowY = "hidden";
+}
+
+function closeTopicIssue() {
+  const modal = document.getElementById("topicModal");
+  const screen = document.getElementById("screen");
+  if (!modal) return;
+
+  modal.classList.remove("is-active");
+  if (screen && !document.getElementById("detailModal")?.classList.contains("is-active")) {
+    screen.style.overflowY = "auto";
+  }
 }
 
 /* ---------- 渲染：链路 ---------- */
@@ -870,6 +1026,12 @@ function setupTabs() {
         screen.style.overflowY = "auto";
       }
 
+      const topicModal = document.getElementById("topicModal");
+      if (topicModal && topicModal.classList.contains("is-active")) {
+        topicModal.classList.remove("is-active");
+        screen.style.overflowY = "auto";
+      }
+
       if (target === "preference") {
         // reset then animate
         document.querySelectorAll('.pb-fill').forEach(el => el.style.width = "0");
@@ -1002,6 +1164,7 @@ function setupIndexLink() {
 
 /* ---------- init ---------- */
 renderAssetStats();
+renderDemoRoute();
 renderFlavorCards();
 renderTopicPreview();
 renderJourney();
@@ -1010,5 +1173,6 @@ renderIndex();
 setupTabs();
 setupCoverEntry();
 setupCategoryChips();
+setupTopicModal();
 initModal();
 setupIndexLink();

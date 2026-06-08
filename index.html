@@ -65,6 +65,7 @@
                 <button class="cover-cta" id="startExplore" type="button">进入本期风味</button>
                 <span class="cover-action-note">收藏喜欢的组合，沉淀自己的风味偏好。</span>
               </div>
+              <div class="reading-route" id="demoRoute"><!-- route injected by app.js --></div>
             </div>
           </div>
         </section>
@@ -130,6 +131,9 @@
             <span class="section-label">FLAVOR PROFILE</span>
             <h2 class="section-title">你的风味偏好</h2>
             <p class="section-lead">收藏与浏览，会慢慢沉淀成一份属于你的风味小档案。</p>
+            <div class="profile-insight">
+              收藏行为可以沉淀为风味偏好，未来可用于专题运营、内容推荐和用户分层。
+            </div>
           </div>
           <div class="profiles" id="profiles"><!-- profiles injected --></div>
           <p class="profile-foot" id="profileFoot">以上为模拟画像，用于展示风味偏好如何被记录与沉淀。</p>
@@ -202,6 +206,15 @@
             </div>
             <div class="modal-related" id="modalRelated"><!-- related flavors injected --></div>
           </div>
+        </div>
+      </div>
+
+      <!-- ============ 专题阅读层 ============ -->
+      <div class="topic-modal" id="topicModal">
+        <div class="topic-modal-overlay" id="topicModalOverlay"></div>
+        <div class="topic-modal-content">
+          <button class="topic-modal-close" id="topicModalClose" aria-label="关闭专题">×</button>
+          <div class="topic-modal-body" id="topicModalBody"><!-- topic issue injected --></div>
         </div>
       </div>
     </div>
