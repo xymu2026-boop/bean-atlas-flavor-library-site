@@ -10,6 +10,7 @@ const flavorCards = [
     photo: "assets/card-floral.jpg",
     accent: "var(--tea)",
     primaryFamily: "花香",
+    filterGroup: "产地探索",
     detail: {
       story: "干香是极其优雅、高亢的茉莉花香与橙皮精油的清香。注入热水后，茉莉花的清甜如潮水般涌现，夹带着佛手柑的酸甜感。入口感觉非常像一杯刚刚冲泡好的高山绿茶或茉莉花茶，酸质非常干净柔和，尾韵持久，带有清淡的蜂蜜甜感。",
       temp: "92℃ - 93℃",
@@ -26,6 +27,7 @@ const flavorCards = [
     photo: "assets/card-citrus.jpg",
     accent: "var(--citrus)",
     primaryFamily: "柑橘明亮",
+    filterGroup: "产地探索",
     detail: {
       story: "这款咖啡展现了极其精致的水洗瑰夏特征。干香带有橙花与新鲜柠檬皮的清新香气。入口后，明亮的柠檬、红葡萄柚酸质迅速占领味蕾，紧接着转化为优雅的白色花香。中后段展现出红茶般润滑的茶感与细致的冰糖甜，极其优雅平衡。",
       temp: "91℃ - 92℃",
@@ -42,6 +44,7 @@ const flavorCards = [
     photo: "assets/card-berry.jpg",
     accent: "var(--cherry)",
     primaryFamily: "莓果红果",
+    filterGroup: "莓果酒感",
     detail: {
       story: "通过控温厌氧发酵，将莓果的甜美发挥到了极致。干香带有成熟草莓酱与黑樱桃的甜香。冲泡后，草莓、覆盆子的酸甜饱满丰沛，并带有些许成熟红葡萄酒的微醺发酵感。口感稠度高，像是品尝一杯现榨的莓果果汁，尾韵甜感极其持久。",
       temp: "90℃ - 91℃",
@@ -58,6 +61,7 @@ const flavorCards = [
     photo: "assets/card-tropical.jpg",
     accent: "#e7872b",
     primaryFamily: "热带水果",
+    filterGroup: "热带果汁",
     detail: {
       story: "极其奔放的热带水果交响乐。磨粉后即能闻到强烈的芒果泥与熟菠萝的甜香。入口是非常鲜明、充满活力的百香果、菠萝酸质，伴随着芒果肉的软糯甜感。整杯咖啡口感如果汁般饱满黏稠，回甘中带着发酵水果茶的甜润。",
       temp: "89℃ - 91℃",
@@ -74,6 +78,7 @@ const flavorCards = [
     photo: "assets/card-honey.jpg",
     accent: "var(--honey)",
     primaryFamily: "蜂蜜甜感",
+    filterGroup: "茶感甜感",
     detail: {
       story: "温润舒缓、极具东方韵味的一杯咖啡。干香有着黄桃干与烤坚果的气息。入口后是熟透黄桃的温和酸甜，随后化为极高纯度的椴树蜜般的黏稠甜感。尾韵带有乌龙茶的清幽与丝丝茶涩，口感极具润泽感，温暖舒适。",
       temp: "91℃ - 92℃",
@@ -90,6 +95,7 @@ const flavorCards = [
     photo: "assets/card-cocoa.jpg",
     accent: "var(--cocoa)",
     primaryFamily: "坚果可可",
+    filterGroup: "坚果可可",
     detail: {
       story: "温暖、踏实而经典的纯粹风味。干香是浓郁的烤榛果与烤杏仁香气。入口后，坚果的奶油感与焦糖的甜度交织，伴随着如丝绸般平滑的质感。尾段是黑巧克力的醇厚苦甜，没有张扬的果酸，是冬日清晨或配奶的上佳选择。",
       temp: "88℃ - 90℃",
@@ -103,9 +109,10 @@ const flavorCards = [
     origin: "哥伦比亚 / 蕙兰",
     process: "厌氧日晒",
     description: "宛如一杯盛夏的玫瑰起泡酒，浓郁的花香伴随着鲜甜的荔枝果肉感。",
-    photo: "assets/card-rose.png",
+    photo: "assets/card-rose.jpg",
     accent: "#d45d79",
     primaryFamily: "发酵酒感",
+    filterGroup: "莓果酒感",
     detail: {
       story: "这是一杯让人惊艳的艺术品。干香充盈着成熟红玫瑰与糖渍荔枝的香气。入口瞬间，高雅的玫瑰花香混合着荔枝多汁的果肉甜席卷口腔，中段带有一层细腻的糯米酒酿甜发酵风味。质感如果冻般丝滑，清甜醉人。",
       temp: "90℃ - 92℃",
@@ -119,11 +126,12 @@ const flavorCards = [
     origin: "肯尼亚 / 涅里",
     process: "72小时水洗",
     description: "入口是明亮清脆的红苹果酸甜，中段逐渐转化为枫糖的厚重甜感，尾韵干净。",
-    photo: "assets/card-apple.png",
+    photo: "assets/card-apple.jpg",
     accent: "#c05c3b",
     primaryFamily: "茶感草本",
+    filterGroup: "产地探索",
     detail: {
-      story: "肯尼亚优质水洗带来的多汁酸质与扎实甜感。干香是明显的红苹果与红醋栗的香气。入口即是清脆多汁的红苹果酸质，随后是饱满的红糖、枫糖浆甜感。尾韵转为斯里兰卡红茶般的干净温润，生津感极强，令人垂涎。",
+      story: "肯尼亚优质水洗带来的多汁酸质与扎实甜感。干香是明显的红苹果与红醋栗的香气。入口即是清脆多汁 of 红苹果酸质，随后是饱满的红糖、枫糖浆甜感。尾韵转为斯里兰卡红茶般的干净温润，生津感极强，令人垂涎。",
       temp: "92℃ - 93℃",
       ratio: "1:15",
       brew: "建议使用中细研磨，高温冲煮。采用经典的 V60 滤杯以大水流冲刷，可快速提取肯尼亚标志性的清脆果酸，并在中段大水流闷蒸出厚实的枫糖回甘。"
@@ -135,9 +143,10 @@ const flavorCards = [
     origin: "洪都拉斯 / 马萨拉",
     process: "雪莉桶精致水洗",
     description: "仿佛品尝一颗酒心巧克力，浓郁的朗姆酒与发酵提子干的香气在口中弥散。",
-    photo: "assets/card-rum.png",
+    photo: "assets/card-rum.jpg",
     accent: "#5e3b2b",
     primaryFamily: "发酵酒感",
+    filterGroup: "莓果酒感",
     detail: {
       story: "雪莉酒桶陈化工艺赋予了咖啡极其迷人的酒香。研磨时，朗姆酒、香草和葡萄干的香气扑鼻而来。入口有着熟透的黑提子干甜感，伴随着雪莉朗姆酒的微醺木质香气。尾段则是黑巧克力与可可豆碎的醇厚余韵，香气复合持久。",
       temp: "89℃ - 90℃",
@@ -151,14 +160,219 @@ const flavorCards = [
     origin: "萨尔瓦多 / 圣安娜",
     process: "蜜处理",
     description: "丝滑的夏威夷果仁香气，夹杂着一丝高雅的天然香草荚气息，口感圆润饱满。",
-    photo: "assets/card-vanilla.png",
+    photo: "assets/card-vanilla.jpg",
     accent: "#ccaa77",
     primaryFamily: "坚果可可",
+    filterGroup: "坚果可可",
     detail: {
       story: "柔顺、甜润，如同享用一份高档的香草坚果布丁。干香散发着浓郁的夏威夷果仁与焦糖布丁甜香。入口后展现出成熟夏威夷果的丰腴油脂感，同时伴随着丝丝优雅的天然香草风味。口感圆润饱满，回甘带有焦糖奶油太妃糖的持久香甜。",
       temp: "90℃ - 91℃",
       ratio: "1:15",
       brew: "中度研磨，使用蛋糕滤杯。冲煮时可多段注水，拉大甜感与醇厚度的比重，适合喜欢甜品感强、温和顺滑咖啡的爱好者。"
+    }
+  },
+  {
+    name: "白桃乌龙",
+    flavorWords: ["白桃", "乌龙", "蜂蜜"],
+    origin: "云南 / 普洱、保山",
+    process: "水洗 / 蜜处理",
+    description: "像一杯有果香的冷泡乌龙，白桃的柔软甜感落在茶汤后段。",
+    photo: "assets/card-white-peach.jpg",
+    accent: "#f4a29e",
+    primaryFamily: "茶感草本",
+    filterGroup: "产地探索",
+    detail: {
+      story: "结合了云南咖啡的醇厚底色与精致的核果香气。磨粉时有着诱人的成熟水蜜桃干甜香。注水后，清新的白桃汁感在口中铺开，伴随清凉的乌龙茶韵。整体酸质温和，如同一杯果甜明显的冰镇高山乌龙茶，十分温润消暑。",
+      temp: "90℃ - 92℃",
+      ratio: "1:15",
+      brew: "中研磨，推荐 V60 或 Origami 滤杯。注水手法保持温柔慢速，避免过度搅拌，以最大化呈现茶感和白桃甜的细腻层次。"
+    }
+  },
+  {
+    name: "柚子晨光",
+    flavorWords: ["葡萄柚", "白花", "绿茶"],
+    origin: "巴拿马 / 波奎特",
+    process: "水洗",
+    description: "入口像清晨切开的葡萄柚，酸质明亮，尾段有白花和绿茶的清凉感。",
+    photo: "assets/card-grapefruit-morning.jpg",
+    accent: "#f0b85d",
+    primaryFamily: "柑橘明亮",
+    filterGroup: "明亮花香",
+    detail: {
+      story: "充满了清晨生机的惊艳咖啡。干香带有白色野茉莉与柠檬皮的清香。入口是葡萄柚般酸甜、充满张力的明亮酸质，迅速带来生津感。中后段绿茶般的干净茶感显现，并伴随着清幽的橙花香气，口感清爽剔透。",
+      temp: "91℃ - 93℃",
+      ratio: "1:16",
+      brew: "中细研磨，V60 滤杯。高温快速萃取，中段稍微加大注水，减少尾段浸泡时间，以保持杯中酸质的明亮与白花的纯净度。"
+    }
+  },
+  {
+    name: "紫罗兰蓝莓",
+    flavorWords: ["蓝莓", "紫罗兰", "红茶"],
+    origin: "埃塞俄比亚 / 古吉",
+    process: "日晒",
+    description: "蓝莓的深色果香先出现，随后是轻盈花香和一层红茶般的尾韵。",
+    photo: "assets/card-blueberry-violet.jpg",
+    accent: "#6c5ea3",
+    primaryFamily: "莓果红果",
+    filterGroup: "莓果酒感",
+    detail: {
+      story: "经典的古吉日晒豆，将紫色风味表达得淋漓尽致。干香散发着浓郁的蓝莓果酱与紫色花朵香气。入口后，蓝莓的成熟酸甜多汁，伴随着紫罗兰的优雅花香在鼻腔中回荡。尾韵转为红茶般的温润与蔗糖甜，极富层次感。",
+      temp: "90℃ - 91℃",
+      ratio: "1:15",
+      brew: "中研磨，建议使用 Kalita Wave 蛋糕滤杯。水温控制在 90℃，分段注水以平衡蓝莓的果酸与后段日晒豆的蔗糖甜，避免过度发酵味。"
+    }
+  },
+  {
+    name: "黑加仑红茶",
+    flavorWords: ["黑加仑", "红茶", "蔗糖"],
+    origin: "肯尼亚 / 涅里、奇安布",
+    process: "水洗",
+    description: "酸质像黑加仑一样清亮有张力，中后段转向红茶和蔗糖甜。",
+    photo: "assets/card-blackcurrant-tea.jpg",
+    accent: "#87325c",
+    primaryFamily: "茶感草本",
+    filterGroup: "产地探索",
+    detail: {
+      story: "肯尼亚极致双重水洗代表。干香是标志性的黑加仑、红浆果与少许香草气味。入口时，高亢、清脆的黑加仑酸质带来极强的冲击力，紧接着在口中化为浓郁的红糖和蔗糖甜。尾韵是锡兰红茶般的清爽与扎实，结构感非常强。",
+      temp: "92℃ - 94℃",
+      ratio: "1:15",
+      brew: "中细研磨，采用较高水温（93℃）。大水流中心注水，加快过滤速度，重点突出肯尼亚极具代表性的高活性果酸与干净茶感。"
+    }
+  },
+  {
+    name: "黄桃香槟",
+    flavorWords: ["黄桃", "香槟", "花蜜"],
+    origin: "哥伦比亚 / 蕙兰",
+    process: "厌氧水洗",
+    description: "像黄桃罐头与香槟气泡的结合，明亮、甜润，有轻微发酵香。",
+    photo: "assets/card-peach-champagne.jpg",
+    accent: "#db9f7b",
+    primaryFamily: "发酵酒感",
+    filterGroup: "莓果酒感",
+    detail: {
+      story: "精致厌氧工艺的典范之作。磨粉即能闻到如同打开黄桃罐头般的浓郁果蜜香。入口带有一丝类似气泡酒的明快果酸刺激感，随后释放出成熟黄桃的软糯蜜甜，尾韵泛起淡淡的花蜜余香，整体风格明亮、甜润而深邃。",
+      temp: "89℃ - 91℃",
+      ratio: "1:15",
+      brew: "中度研磨，选择 Origami 滤杯或 V60。水温不宜太高，中段以温柔的中心细水流萃取，避免过快带出后段可能存在的过重木质醇感。"
+    }
+  },
+  {
+    name: "芭乐百香果",
+    flavorWords: ["番石榴", "百香果", "热带果汁"],
+    origin: "哥斯达黎加 / 塔拉珠",
+    process: "蜜处理 / 厌氧",
+    description: "热带水果的香气很直接，像一杯酸甜明亮的果汁。",
+    photo: "assets/card-guava-passionfruit.jpg",
+    accent: "#b5b038",
+    primaryFamily: "热带水果",
+    filterGroup: "热带果汁",
+    detail: {
+      story: "仿佛一杯新鲜榨取的夏日热带综合果汁。干香散发出浓烈的成熟粉芭乐（番石榴）与百香果干香。入口后，芭乐的香甜与百香果的清亮酸质完美融合，口感饱满粘稠，尾段回甘中带有一丝菠萝硬糖的清甜，极其多汁。",
+      temp: "89℃ - 91℃",
+      ratio: "1:15",
+      brew: "中粗研磨，推荐使用 Kalita Wave 蛋糕滤杯以增强萃取均匀度。使用 90℃ 左右的水进行分段缓慢注水，拉长冲煮时间，充分提取热带水果的油脂与黏稠质感。"
+    }
+  },
+  {
+    name: "樱桃白兰地",
+    flavorWords: ["樱桃", "白兰地", "可可"],
+    origin: "哥伦比亚 / 考卡",
+    process: "厌氧日晒",
+    description: "像咬开一颗酒心樱桃，果香、酒感和可可尾韵层层展开。",
+    photo: "assets/card-cherry-brandy.jpg",
+    accent: "#782333",
+    primaryFamily: "发酵酒感",
+    filterGroup: "莓果酒感",
+    detail: {
+      story: "令人迷醉的深色发酵酒香。干香带有黑车厘子、白兰地酒心巧克力以及香草的幽香。入口是成熟黑樱桃的醇厚果甜，伴随着白兰地酒般微醺的喉感与可可豆碎的微苦余韵，醇厚度极高，是一杯适合静静品饮的慢热咖啡。",
+      temp: "89℃ - 90℃",
+      ratio: "1:14",
+      brew: "中度研磨，选用聪明滤杯或爱乐压。使用较低水温进行浸泡萃取，过滤后能够最大化保留白白兰地香气与高浓度黑巧可可的滑润，降低杂涩味道。"
+    }
+  },
+  {
+    name: "太妃榛果",
+    flavorWords: ["太妃糖", "榛果", "奶油"],
+    origin: "巴西 / 米纳斯吉拉斯",
+    process: "日晒",
+    description: "温暖、圆润，有烤榛果和太妃糖的甜香，像一杯不用解释的舒服咖啡。",
+    photo: "assets/card-toffee-hazelnut.jpg",
+    accent: "#c48c5a",
+    primaryFamily: "蜂蜜甜感",
+    filterGroup: "坚果可可",
+    detail: {
+      story: "温暖经典、如同冬日暖阳般的极度舒适体验。干香带有太妃糖与烘烤榛果的醇香。入口温润厚实，充盈着融化太妃糖的细腻乳脂甜感，随后展现出烤榛果的奶油般香气。酸度极低，回甘如同一杯焦糖玛奇朵，饱满安定。",
+      temp: "88℃ - 90℃",
+      ratio: "1:15",
+      brew: "中粗研磨，平板滤杯（如 Kalita）。较低水温（89℃），分段焖蒸，利用多段浸透手法提取出更饱满的甜感和圆润的口触，口感温厚。"
+    }
+  },
+  {
+    name: "杏仁奶油",
+    flavorWords: ["杏仁", "奶油", "焦糖"],
+    origin: "危地马拉 / 安提瓜",
+    process: "水洗",
+    description: "像烤杏仁与奶油焦糖，干净、稳定，适合喜欢低酸甜感的人。",
+    photo: "assets/card-almond-cream.jpg",
+    accent: "#ccad8a",
+    primaryFamily: "坚果可可",
+    filterGroup: "坚果可可",
+    detail: {
+      story: "极致丝滑与平衡的下午茶首选。干香展现烤杏仁、坚果碎与红糖的香气。入口是非常柔滑的杏仁奶甜，伴随着焦糖的柔和包裹感。酸质极其柔顺温和，尾韵干净，呈现出焦糖奶油饼干的醇香余味。",
+      temp: "90℃ - 92℃",
+      ratio: "1:15",
+      brew: "中研磨，建议使用 V60。第一段快速闷蒸后，采用中心绕圈方式稳定注水，冲煮时间控制在 2 分 15 秒内，以保留其温润甜滑而避免出现坚果木质涩味。"
+    }
+  },
+  {
+    name: "黑糖可可",
+    flavorWords: ["黑糖", "可可", "烘烤坚果"],
+    origin: "巴西 / 哥伦比亚",
+    process: "日晒 / 水洗",
+    description: "深色甜感很稳，像黑糖、可可和烤坚果在杯中慢慢变厚。",
+    photo: "assets/card-brown-sugar-cocoa.jpg",
+    accent: "#5e3e2b",
+    primaryFamily: "坚果可可",
+    filterGroup: "坚果可可",
+    detail: {
+      story: "沉稳厚重、极具安全感的一杯经典之作。干香是黑糖、黑巧克力与熟烤坚果的深邃香气。入口没有突出的酸质，而是非常扎实的黑糖甜与高纯度黑巧克力的醇苦，中后段展现出烤焦糖坚果的香气，口触极其饱满，越往后越甜润。",
+      temp: "88℃ - 90℃",
+      ratio: "1:14",
+      brew: "中粗研磨，较低水温。推荐使用聪明滤杯或爱乐压。使用 1:14 较紧凑的粉水比，凸显黑糖与黑巧克力的醇厚 Body 与持久的深层甜度。"
+    }
+  },
+  {
+    name: "柠檬草青苹果",
+    flavorWords: ["青苹果", "柠檬草", "清茶"],
+    origin: "卢旺达 / 西部高地",
+    process: "水洗",
+    description: "很清爽的一杯，青苹果酸质和柠檬草香气让尾段变得轻盈。",
+    photo: "assets/card-green-apple-lemongrass.jpg",
+    accent: "#8cba82",
+    primaryFamily: "柑橘明亮",
+    filterGroup: "明亮花香",
+    detail: {
+      story: "带来夏日清风般凉爽的一款杰作。干香是新鲜青苹果切片与淡淡柠檬草药草的清新气味。入口是脆爽、多汁的青苹果酸甜，伴随着柠檬草精油的特有清香，尾韵如同一杯干净的冷萃绿茶，生津止渴，空灵而轻盈。",
+      temp: "91℃ - 92℃",
+      ratio: "1:16",
+      brew: "中细研磨，V60 滤杯。1:16 的略宽粉水比，冲煮时水流要稳定温柔，重点突显其轻盈透澈的茶感与青苹果脆爽的酸质。"
+    }
+  },
+  {
+    name: "香料黑巧",
+    flavorWords: ["黑巧", "肉桂", "烟熏木质"],
+    origin: "印尼 / 苏门答腊",
+    process: "湿刨",
+    description: "更低沉、更有木质感，像黑巧、肉桂和湿润森林的气息。",
+    photo: "assets/card-spice-dark-chocolate.jpg",
+    accent: "#453225",
+    primaryFamily: "坚果可可",
+    filterGroup: "产地探索",
+    detail: {
+      story: "苏门答腊传统湿刨法所带来的厚重与神秘。干香散发着草药、肉桂、雪松木与浓郁黑巧克力的奇特香气。入口口感极其厚实、醇滑，带有些许烟熏木质感，中段展开可可的苦甜与肉桂的微辛，风味低沉而极具深度。",
+      temp: "88℃ - 90℃",
+      ratio: "1:14",
+      brew: "中粗研磨，水温较低（88℃）。推荐使用聪明杯或法压壶以全身浸泡方式萃取，能够完美包容其厚重的木质和可可油脂感，表现其狂野而平稳的醇厚感。"
     }
   }
 ];
@@ -201,6 +415,18 @@ const profiles = [
       { label: "甜感", pct: 16, color: "var(--honey)" }
     ],
     rec: ["莓果酒香", "热带果汁"]
+  },
+  {
+    name: "甜感型安定派",
+    tag: "PROFILE C",
+    note: "偏爱舒适、温暖、伴随高甜度与浓郁坚果可可香的咖啡。",
+    bars: [
+      { label: "蜂蜜甜感", pct: 32, color: "var(--honey)" },
+      { label: "坚果可可", pct: 28, color: "var(--cocoa)" },
+      { label: "茶感草本", pct: 20, color: "#9bb07d" },
+      { label: "柑橘明亮", pct: 20, color: "var(--citrus)" }
+    ],
+    rec: ["蜂蜜乌龙", "香草坚果", "枫糖布丁"]
   }
 ];
 
@@ -234,18 +460,29 @@ function saveFlavors(savedList) {
 }
 
 /* ---------- 渲染：风味卡 ---------- */
-function renderFlavorCards() {
+function renderFlavorCards(filterCategory = "全部") {
   const savedFlavors = getSavedFlavors();
   const rail = document.getElementById("flavorRail");
 
-  rail.innerHTML = flavorCards.map((c, i) => {
+  const filteredCards = flavorCards.map((c, i) => ({ ...c, originalIndex: i }))
+    .filter(c => {
+      if (filterCategory === "全部") return true;
+      return c.filterGroup === filterCategory;
+    });
+
+  if (filteredCards.length === 0) {
+    rail.innerHTML = `<p class="rail-empty" style="text-align:center;width:100%;color:var(--muted);padding:40px 0;font-family:var(--sans);font-size:14px;">暂无相关风味卡片</p>`;
+    return;
+  }
+
+  rail.innerHTML = filteredCards.map(c => {
     const isSaved = savedFlavors.includes(c.name);
     return `
-    <article class="flavor-card" data-index="${i}">
+    <article class="flavor-card" data-index="${c.originalIndex}">
       <div class="fc-photo">
         <span class="fc-accent" style="background:${c.accent}"></span>
         <img src="${c.photo}" alt="${c.name}" loading="lazy">
-        <button class="bookmark-button ${isSaved ? 'is-saved' : ''}" data-card="${i}" aria-label="收藏 ${c.name}">
+        <button class="bookmark-button ${isSaved ? 'is-saved' : ''}" data-card="${c.originalIndex}" aria-label="收藏 ${c.name}">
           ${isSaved ? '★' : '⌖'}
         </button>
       </div>
@@ -258,7 +495,6 @@ function renderFlavorCards() {
     </article>`;
   }).join("");
 
-  // 收藏事件
   rail.querySelectorAll(".bookmark-button").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -280,7 +516,6 @@ function renderFlavorCards() {
     });
   });
 
-  // 点击卡片进入详情态
   rail.querySelectorAll(".flavor-card").forEach(card => {
     card.addEventListener("click", (e) => {
       if (e.target.closest(".bookmark-button")) return;
