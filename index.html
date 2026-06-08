@@ -47,6 +47,7 @@
                 <span class="chip">清茶</span>
               </div>
               <p class="featured-note">本期带你走进一杯像花茶一样干净、明亮的咖啡。</p>
+              <p class="cover-positioning">一本关于精品咖啡风味的数字杂志，也是一套用户兴趣运营样本。</p>
               <div class="cover-stats" id="assetStats" aria-label="风味图书馆内容统计">
                 <div class="cover-stat">
                   <strong>22</strong>
@@ -135,6 +136,7 @@
               收藏行为可以沉淀为风味偏好，未来可用于专题运营、内容推荐和用户分层。
             </div>
           </div>
+          <div class="flavor-shelf" id="flavorShelf"><!-- saved shelf injected --></div>
           <div class="profiles" id="profiles"><!-- profiles injected --></div>
           <p class="profile-foot" id="profileFoot">以上为模拟画像，用于展示风味偏好如何被记录与沉淀。</p>
         </section>
@@ -194,6 +196,7 @@
               <div class="meta-item"><strong>建议水温</strong><span id="modalTemp"></span></div>
               <div class="meta-item"><strong>粉水比</strong><span id="modalRatio"></span></div>
             </div>
+            <div class="flavor-compass" id="modalCompass"><!-- flavor coordinate injected --></div>
             <div class="modal-divider"></div>
             <div class="modal-story">
               <h4>风味手记</h4>
@@ -217,6 +220,8 @@
           <div class="topic-modal-body" id="topicModalBody"><!-- topic issue injected --></div>
         </div>
       </div>
+
+      <div class="save-toast" id="saveToast" role="status" aria-live="polite"></div>
     </div>
   </div>
 

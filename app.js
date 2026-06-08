@@ -504,6 +504,34 @@ const topicPreviews = [
       ["推荐逻辑", "这类风味适合承接新手，也适合做复购和日常饮用场景的内容资产。"],
       ["冲煮提醒", "稍低水温和更稳定的萃取，可以保留甜感，减少苦味和木质涩感。"]
     ]
+  },
+  {
+    id: "washed-clean",
+    label: "PROCESS NOTE",
+    name: "水洗咖啡的干净感",
+    desc: "从花香、红茶到青苹果，理解水洗处理如何让风味变得清澈、明亮、有结构。",
+    category: "明亮柑橘",
+    color: "var(--citrus)",
+    cardNames: ["花香清茶", "柑橘白花", "黑加仑红茶", "柠檬草青苹果"],
+    points: [
+      ["处理法", "水洗会减少果肉发酵带来的厚重感，更容易呈现清晰酸质、花香和茶感。"],
+      ["适合人群", "适合喜欢干净、明亮、层次清楚的人，也适合做精品咖啡入门教育。"],
+      ["运营线索", "水洗专题能自然连接产地、品种和冲煮变量，是长期科普栏目里最稳的一类。"]
+    ]
+  },
+  {
+    id: "kenya-bright",
+    label: "ORIGIN NOTE",
+    name: "肯尼亚的明亮酸质",
+    desc: "用红苹果、黑加仑和红茶做入口，读懂肯尼亚咖啡里强结构、高生津的风味表达。",
+    category: "产地代表",
+    color: "#c05c3b",
+    cardNames: ["红苹果枫糖", "黑加仑红茶", "柠檬草青苹果", "柑橘白花"],
+    points: [
+      ["产地表达", "肯尼亚常见明亮、多汁、有张力的酸质，容易形成非常清楚的风味记忆点。"],
+      ["风味词", "红苹果、黑加仑、红茶这类词，比抽象酸度更容易被用户理解和收藏。"],
+      ["演示价值", "产地专题能证明风味图书馆不只是卡片集合，而可以持续生长为产地内容资产。"]
+    ]
   }
 ];
 
@@ -603,6 +631,43 @@ function getSimilarFlavorCards(sourceIndex, limit = 3) {
     .slice(0, limit);
 }
 
+function getFlavorCoordinates(card) {
+  const familyDefaults = {
+    "花香": { bright: 82, sweet: 56, body: 34 },
+    "柑橘明亮": { bright: 90, sweet: 50, body: 36 },
+    "莓果红果": { bright: 76, sweet: 68, body: 58 },
+    "热带水果": { bright: 82, sweet: 74, body: 62 },
+    "茶感草本": { bright: 72, sweet: 48, body: 38 },
+    "蜂蜜甜感": { bright: 48, sweet: 86, body: 64 },
+    "坚果可可": { bright: 28, sweet: 66, body: 84 },
+    "发酵酒感": { bright: 66, sweet: 72, body: 74 }
+  };
+
+  const base = familyDefaults[card.primaryFamily] || { bright: 60, sweet: 60, body: 60 };
+  const words = card.flavorWords.join("");
+  const process = card.process;
+
+  return {
+    bright: Math.min(96, base.bright + (/柠檬|柚|苹果|黑加仑|清茶|绿茶/.test(words) ? 6 : 0)),
+    sweet: Math.min(96, base.sweet + (/蜂蜜|焦糖|太妃|香草|黄桃|白桃|黑糖/.test(words) ? 8 : 0)),
+    body: Math.min(96, base.body + (/可可|黑巧|榛果|奶油|朗姆|白兰地/.test(words) ? 8 : 0) + (/厌氧|日晒|湿刨/.test(process) ? 4 : 0))
+  };
+}
+
+let toastTimer;
+
+function showSaveToast(message) {
+  const toast = document.getElementById("saveToast");
+  if (!toast) return;
+
+  toast.textContent = message;
+  toast.classList.add("is-active");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("is-active");
+  }, 1600);
+}
+
 /* ---------- 本地存储逻辑 ---------- */
 function getSavedFlavors() {
   try {
@@ -674,11 +739,14 @@ function renderFlavorCards(filterCategory = activeFlavorCategory) {
         if (!savedFlavors.includes(card.name)) {
           savedFlavors.push(card.name);
         }
+        showSaveToast("已加入你的风味书架");
       } else {
         btn.textContent = "⌖";
         savedFlavors = savedFlavors.filter(name => name !== card.name);
+        showSaveToast("已移出风味书架");
       }
       saveFlavors(savedFlavors);
+      renderFlavorShelf();
       renderProfiles();
 
       if (document.querySelector('.tab-panel[data-panel="preference"]').classList.contains("is-active")) {
@@ -888,6 +956,46 @@ function renderJourney() {
 }
 
 /* ---------- 渲染：偏好 ---------- */
+function renderFlavorShelf() {
+  const shelfRoot = document.getElementById("flavorShelf");
+  if (!shelfRoot) return;
+
+  const savedCards = getCardsByNames(getSavedFlavors()).map(card => ({
+    ...card,
+    originalIndex: flavorCards.findIndex(item => item.name === card.name)
+  }));
+
+  shelfRoot.innerHTML = `
+    <div class="shelf-card">
+      <div class="shelf-head">
+        <span class="shelf-title">我的风味书架</span>
+        <span class="shelf-count">${savedCards.length} SAVED</span>
+      </div>
+      ${savedCards.length ? `
+        <div class="shelf-list">
+          ${savedCards.map(card => `
+            <article class="shelf-item" data-card="${card.originalIndex}">
+              <picture>
+                <source srcset="${getAvifPath(card.photo)}" type="image/avif">
+                <img src="${card.photo}" alt="${card.name}" loading="lazy">
+              </picture>
+              <div class="shelf-item-name">${card.name}</div>
+              <div class="shelf-item-note">${card.flavorWords.slice(0, 2).join(" / ")}</div>
+            </article>`).join("")}
+        </div>` : `
+        <p class="shelf-empty">收藏一张风味卡后，这里会变成你的私人风味书架。</p>`}
+    </div>`;
+
+  shelfRoot.querySelectorAll(".shelf-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const cardIndex = parseInt(item.dataset.card);
+      if (typeof window.openFlavorDetail === "function") {
+        window.openFlavorDetail(cardIndex);
+      }
+    });
+  });
+}
+
 function renderProfiles() {
   const profileRoot = document.getElementById("profiles");
   const profileFoot = document.getElementById("profileFoot");
@@ -988,6 +1096,29 @@ function renderProfiles() {
   }
 }
 
+function renderFlavorCompass(card) {
+  const compassRoot = document.getElementById("modalCompass");
+  if (!compassRoot) return;
+
+  const coordinates = getFlavorCoordinates(card);
+  const axes = [
+    { label: "明亮度", value: coordinates.bright, color: "var(--citrus)" },
+    { label: "甜感", value: coordinates.sweet, color: "var(--honey)" },
+    { label: "醇厚度", value: coordinates.body, color: "var(--cocoa)" }
+  ];
+
+  compassRoot.innerHTML = `
+    <div class="compass-head">
+      <span class="compass-title">风味坐标</span>
+      <span class="compass-label">TASTE AXIS</span>
+    </div>
+    ${axes.map(axis => `
+      <div class="compass-axis">
+        <div class="axis-top"><span>${axis.label}</span><span class="axis-value">${axis.value}</span></div>
+        <div class="axis-track"><div class="axis-fill" style="width:${axis.value}%; --axis-color:${axis.color}"></div></div>
+      </div>`).join("")}`;
+}
+
 /* ---------- 渲染：索引 ---------- */
 function renderIndex() {
   document.getElementById("indexGrid").innerHTML = indexGroups.map(g => {
@@ -1072,6 +1203,7 @@ function initModal() {
     document.getElementById("modalRatio").textContent = card.detail.ratio;
     document.getElementById("modalStory").textContent = card.detail.story;
     document.getElementById("modalBrew").textContent = card.detail.brew;
+    renderFlavorCompass(card);
     renderRelatedFlavors(index);
 
     modal.classList.add("is-active");
@@ -1168,6 +1300,7 @@ renderDemoRoute();
 renderFlavorCards();
 renderTopicPreview();
 renderJourney();
+renderFlavorShelf();
 renderProfiles();
 renderIndex();
 setupTabs();
