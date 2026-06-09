@@ -541,10 +541,6 @@ function getPrimaryOrigin(origin) {
   return origin.split("/")[0].trim();
 }
 
-function getAvifPath(photo) {
-  return photo.replace(/\.(jpe?g|png)$/i, ".avif");
-}
-
 function getFlavorAssetStats() {
   return {
     cardCount: flavorCards.length,
@@ -709,10 +705,7 @@ function renderFlavorCards(filterCategory = activeFlavorCategory) {
     <article class="flavor-card" data-index="${c.originalIndex}">
       <div class="fc-photo">
         <span class="fc-accent" style="background:${c.accent}"></span>
-        <picture>
-          <source srcset="${getAvifPath(c.photo)}" type="image/avif">
-          <img src="${c.photo}" alt="${c.name}" loading="lazy">
-        </picture>
+        <img src="${c.photo}" alt="${c.name}" loading="lazy">
         <button class="bookmark-button ${isSaved ? 'is-saved' : ''}" data-card="${c.originalIndex}" aria-label="收藏 ${c.name}">
           ${isSaved ? '★' : '⌖'}
         </button>
@@ -887,10 +880,7 @@ function openTopicIssue(topicId) {
     <div class="issue-card-list">
       ${cards.map(card => `
         <article class="issue-card" data-card="${card.originalIndex}">
-          <picture>
-            <source srcset="${getAvifPath(card.photo)}" type="image/avif">
-            <img src="${card.photo}" alt="${card.name}" loading="lazy">
-          </picture>
+          <img src="${card.photo}" alt="${card.name}" loading="lazy">
           <div class="issue-card-body">
             <div class="issue-card-name">${card.name}</div>
             <div class="issue-card-meta">${card.flavorWords.join(" / ")}<br>${getPrimaryOrigin(card.origin)} · ${card.process}</div>
@@ -936,10 +926,7 @@ function closeTopicIssue() {
 function renderJourney() {
   document.getElementById("journeySteps").innerHTML = journeySteps.map(s => `
     <div class="journey-step">
-      <picture>
-        <source srcset="${getAvifPath(s.photo)}" type="image/avif">
-        <img src="${s.photo}" alt="${s.name}" loading="lazy">
-      </picture>
+      <img src="${s.photo}" alt="${s.name}" loading="lazy">
       <div class="js-body">
         <div class="js-label">${s.label}</div>
         <div class="js-name">${s.name}</div>
@@ -975,10 +962,7 @@ function renderFlavorShelf() {
         <div class="shelf-list">
           ${savedCards.map(card => `
             <article class="shelf-item" data-card="${card.originalIndex}">
-              <picture>
-                <source srcset="${getAvifPath(card.photo)}" type="image/avif">
-                <img src="${card.photo}" alt="${card.name}" loading="lazy">
-              </picture>
+              <img src="${card.photo}" alt="${card.name}" loading="lazy">
               <div class="shelf-item-name">${card.name}</div>
               <div class="shelf-item-note">${card.flavorWords.slice(0, 2).join(" / ")}</div>
             </article>`).join("")}
@@ -1192,7 +1176,6 @@ function initModal() {
     if (!card) return;
 
     document.getElementById("modalAccent").style.background = card.accent;
-    document.getElementById("modalPhotoAvif").srcset = getAvifPath(card.photo);
     document.getElementById("modalPhoto").src = card.photo;
     document.getElementById("modalPhoto").alt = card.name;
     document.getElementById("modalName").textContent = card.name;
@@ -1226,10 +1209,7 @@ function renderRelatedFlavors(index) {
     <div class="related-list">
       ${relatedCards.map(card => `
         <article class="related-card" data-card="${card.originalIndex}">
-          <picture>
-            <source srcset="${getAvifPath(card.photo)}" type="image/avif">
-            <img src="${card.photo}" alt="${card.name}" loading="lazy">
-          </picture>
+          <img src="${card.photo}" alt="${card.name}" loading="lazy">
           <div>
             <div class="related-name">${card.name}</div>
             <div class="related-reason">${card.reason}</div>

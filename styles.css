@@ -119,8 +119,7 @@ body {
   border-radius: 14px;
   overflow: hidden;
 }
-.hero-photo { width: 100%; height: 100%; display: block; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(20,12,8,.78) 0%, rgba(20,12,8,.18) 42%, rgba(20,12,8,0) 70%);
@@ -329,7 +328,6 @@ body {
 }
 .flavor-card:active { transform: translateY(-3px); }
 .fc-photo { position: relative; height: 232px; overflow: hidden; }
-.fc-photo picture { display: block; width: 100%; height: 100%; }
 .fc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .fc-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
 .bookmark-button {
@@ -425,7 +423,6 @@ body {
 .journey-flow i { color: var(--citrus); font-style: normal; }
 .journey-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 14px 24px 8px; }
 .journey-step { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--cream); }
-.journey-step picture { display: block; width: 100%; height: 96px; }
 .journey-step img { width: 100%; height: 96px; object-fit: cover; display: block; }
 .js-body { padding: 11px 13px 13px; }
 .journey-step .js-label { font-family: var(--sans); font-size: 10px; letter-spacing: .18em; color: var(--muted); text-transform: uppercase; }
@@ -487,10 +484,6 @@ body {
   overflow: hidden;
   cursor: pointer;
   scroll-snap-align: start;
-}
-.shelf-item picture {
-  display: block;
-  height: 72px;
 }
 .shelf-item img {
   width: 100%;
@@ -683,11 +676,6 @@ body {
   overflow: hidden;
   flex-shrink: 0;
 }
-.modal-hero picture {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
 .modal-hero img {
   width: 100%; height: 100%;
   object-fit: cover; display: block;
@@ -842,11 +830,6 @@ body {
   padding: 10px;
   cursor: pointer;
 }
-.related-card picture {
-  display: block;
-  width: 72px;
-  height: 72px;
-}
 .related-card img {
   width: 72px;
   height: 72px;
@@ -985,10 +968,6 @@ body {
   overflow: hidden;
   scroll-snap-align: center;
   cursor: pointer;
-}
-.issue-card picture {
-  display: block;
-  height: 128px;
 }
 .issue-card img {
   width: 100%;
