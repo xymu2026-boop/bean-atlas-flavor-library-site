@@ -627,7 +627,7 @@ const coverSlides = [
     editorial: "本期像一本明亮风味的薄册。我们不从产区参数开始，而是从你真正喝到的味道开始：一口清茶感，一点柑橘香，和尾段慢慢留下的甜。"
   },
   {
-    photo: "assets/cover-alternative-1.png",
+    photo: "assets/cover-brewing-moments.jpg",
     alt: "窗边手冲咖啡与铜壶蒸汽",
     issue: "ISSUE 02 · BREWING MOMENTS",
     title: "风味落进杯中<br>只差一次注水",
@@ -638,7 +638,7 @@ const coverSlides = [
     editorial: "这一页写给冲泡。同样的豆子，水流快一点，果酸会更明亮；萃取慢一点，甜感会更厚。风味不是固定答案，而是一次次微小选择的结果。"
   },
   {
-    photo: "assets/cover-alternative-2.png",
+    photo: "assets/cover-flavor-notebook.jpg",
     alt: "咖啡杯、豆子与植物手账静物",
     issue: "ISSUE 03 · FLAVOR NOTEBOOK",
     title: "把喝到的味道<br>收进一座图书馆",
