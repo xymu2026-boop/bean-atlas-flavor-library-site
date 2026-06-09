@@ -377,18 +377,93 @@ const flavorCards = [
   }
 ];
 
+const magazineLines = {
+  "花香清茶": "像一杯被晨光照亮的花茶。",
+  "柑橘白花": "橙皮先亮起来，白花随后落进红茶里。",
+  "莓果酒香": "像一口没有酒精的莓果微醺。",
+  "热带果汁": "把芒果、菠萝和百香果压进同一口酸甜里。",
+  "蜂蜜乌龙": "一杯带着果甜的温润乌龙。",
+  "榛果可可": "像烤榛果和黑巧在杯中慢慢变厚。",
+  "玫瑰荔枝": "花香先抵达，荔枝的甜随后铺开。",
+  "红苹果枫糖": "清脆红苹果之后，是枫糖一样的回甘。",
+  "酒香朗姆": "像咬开一颗深色酒心巧克力。",
+  "香草坚果": "温柔、圆润，像一勺香草坚果奶油。",
+  "白桃乌龙": "白桃的甜，落在一杯冷泡乌龙的尾段。",
+  "柚子晨光": "像清晨切开的葡萄柚，酸质明亮而干净。",
+  "紫罗兰蓝莓": "蓝莓的深色果香里，藏着一层紫色花香。",
+  "黑加仑红茶": "黑加仑的酸质很亮，红茶的尾韵很稳。",
+  "黄桃香槟": "黄桃的蜜甜，带着一点气泡酒的轻盈。",
+  "芭乐百香果": "像一杯热带果汁，酸甜直接、香气外放。",
+  "樱桃白兰地": "樱桃、白兰地和可可，在口中分三层展开。",
+  "太妃榛果": "一杯不用解释的舒服咖啡。",
+  "杏仁奶油": "低酸、柔滑，像烤杏仁和奶油焦糖。",
+  "黑糖可可": "深色甜感慢慢变厚，像黑糖融进可可。",
+  "柠檬草青苹果": "青苹果很脆，柠檬草让尾段变轻。",
+  "香料黑巧": "低沉、木质，像黑巧和肉桂的暗面。"
+};
+
+const tasteScenes = {
+  "花香清茶": ["茉莉和佛手柑先出现，像热水刚碰到花茶。", "茶感变得清澈，酸质柔和而干净。", "尾段留下淡淡蜂蜜甜。"],
+  "柑橘白花": ["柠檬皮和橙花先把香气打开。", "酸质明亮，随后落到红茶一样的顺滑感里。", "尾韵像冰糖和白花，干净、细长。"],
+  "莓果酒香": ["草莓和红葡萄带来第一层果甜。", "轻微发酵感让中段像果酒一样饱满。", "尾段留下莓果果酱般的甜。"],
+  "热带果汁": ["百香果和菠萝先带来明亮酸甜。", "芒果肉感让口感变得饱满。", "回甘像一口热带水果茶。"],
+  "蜂蜜乌龙": ["黄桃的温柔果甜先出现。", "蜂蜜感让茶汤变得圆润。", "尾段有乌龙茶一样的清幽。"],
+  "榛果可可": ["烤榛果和焦糖先铺底。", "中段变得圆润、低酸，像坚果奶油。", "黑巧的苦甜慢慢留在尾韵里。"],
+  "玫瑰荔枝": ["玫瑰花香先抵达鼻腔。", "荔枝果肉和酒酿甜在中段铺开。", "尾段清甜，像一口花果起泡酒。"],
+  "红苹果枫糖": ["红苹果酸质清脆地先亮起来。", "枫糖和红茶让结构变得厚实。", "尾段干净，生津感很强。"],
+  "酒香朗姆": ["朗姆酒和葡萄干先给出深色香气。", "中段像酒心巧克力，甜感和木质感交织。", "黑巧余韵让整杯变得沉稳。"],
+  "香草坚果": ["香草和夏威夷果先带来柔和甜香。", "焦糖让中段变得圆润饱满。", "尾段像一勺温热的坚果奶油。"],
+  "白桃乌龙": ["白桃的轻甜先落在舌面。", "乌龙茶感让中段变得清凉。", "蜂蜜甜在尾段慢慢浮出来。"],
+  "柚子晨光": ["葡萄柚酸质像清晨一样亮。", "白花和绿茶让中段变得透澈。", "尾段清爽，有干净的生津感。"],
+  "紫罗兰蓝莓": ["蓝莓的深色果香先出现。", "紫罗兰花香让中段变得轻盈。", "红茶和蔗糖甜收住尾韵。"],
+  "黑加仑红茶": ["黑加仑酸质清亮、有张力。", "中段转向红茶和蔗糖甜。", "尾段扎实而清爽，结构很清楚。"],
+  "黄桃香槟": ["黄桃蜜甜先把香气打开。", "气泡酒般的轻盈酸感托住中段。", "尾韵带一点花蜜和发酵甜。"],
+  "芭乐百香果": ["芭乐和百香果直接扑出来。", "热带果汁感让中段饱满黏稠。", "尾段有菠萝硬糖一样的甜。"],
+  "樱桃白兰地": ["黑樱桃和白兰地先给出微醺感。", "可可和果甜在中段层层叠加。", "尾段像深色巧克力，慢慢收紧。"],
+  "太妃榛果": ["太妃糖和烤榛果先让香气变暖。", "奶油感让中段变得厚实、顺滑。", "尾段低酸，舒服而安定。"],
+  "杏仁奶油": ["烤杏仁和焦糖先带来温柔甜香。", "奶油感让中段变得柔滑。", "尾韵像焦糖饼干，干净稳定。"],
+  "黑糖可可": ["黑糖和可可先给出深色甜感。", "烘烤坚果让中段慢慢变厚。", "尾段是黑巧般的醇苦与回甘。"],
+  "柠檬草青苹果": ["青苹果酸质脆爽地先出现。", "柠檬草香气让中段更轻。", "尾韵像冷萃绿茶，清爽生津。"],
+  "香料黑巧": ["黑巧和肉桂先带来低沉香气。", "木质与烟熏感让中段更深。", "尾韵厚实，像可可和香料慢慢落下。"]
+};
+
+const replacementPhotos = {
+  "花香清茶": "assets/card-scene-floral-brew.jpg",
+  "柑橘白花": "assets/card-scene-citrus-grind.jpg",
+  "莓果酒香": "assets/card-scene-berry-cupping.jpg",
+  "热带果汁": "assets/card-scene-tropical-iced.jpg",
+  "蜂蜜乌龙": "assets/card-scene-honey-oolong.jpg",
+  "榛果可可": "assets/card-outdoor-forest.jpg",
+  "白桃乌龙": "assets/card-outdoor-terrace.jpg",
+  "黑加仑红茶": "assets/card-outdoor-lake.jpg",
+  "太妃榛果": "assets/card-outdoor-valley.jpg",
+  "香料黑巧": "assets/card-outdoor-mountain.jpg"
+};
+
+flavorCards.forEach(card => {
+  if (replacementPhotos[card.name]) {
+    card.photo = replacementPhotos[card.name];
+  }
+  card.magazineLine = magazineLines[card.name] || card.description;
+  card.detail.tasteScene = tasteScenes[card.name] || [
+    card.flavorWords[0] ? `${card.flavorWords[0]}先成为第一层记忆。` : card.description,
+    card.flavorWords[1] ? `${card.flavorWords[1]}让中段变得更有层次。` : card.description,
+    card.flavorWords[2] ? `尾段留下${card.flavorWords[2]}的线索。` : "尾段干净，留下清楚的风味轮廓。"
+  ];
+});
+
 const journeySteps = [
-  { label: "ORIGIN", name: "产地", desc: "海拔、土壤与气候，决定风味的底色。", photo: "assets/step-origin.jpg" },
-  { label: "PROCESS", name: "处理法", desc: "水洗、日晒、蜜处理，塑造干净或果感。", photo: "assets/step-process.jpg" },
-  { label: "ROAST", name: "烘焙", desc: "深浅之间，是酸甜、花果与焦糖的平衡。", photo: "assets/step-roast.jpg" },
-  { label: "BREW", name: "冲泡", desc: "水温、研磨与时间，让风味最终落进杯中。", photo: "assets/step-brew.jpg" }
+  { label: "ORIGIN", name: "产地", desc: "海拔、土壤与气候，先决定这杯咖啡会偏花香、果酸，还是坚果可可。", photo: "assets/step-origin.jpg" },
+  { label: "PROCESS", name: "处理法", desc: "水洗让风味更清澈，日晒让果感更饱满，蜜处理把甜感留下来。", photo: "assets/step-process.jpg" },
+  { label: "ROAST", name: "烘焙", desc: "烘得浅，花果更亮；烘得深，焦糖、可可和坚果会慢慢出现。", photo: "assets/step-roast.jpg" },
+  { label: "BREW", name: "冲泡", desc: "水温、研磨和时间，是把这些潜在风味真正带进杯里的最后一步。", photo: "assets/step-brew.jpg" }
 ];
 
 const processes = [
-  { name: "水洗", desc: "干净、明亮、茶感、花香。", color: "var(--tea)" },
-  { name: "日晒", desc: "果感、酒香、厚度。", color: "var(--cherry)" },
-  { name: "蜜处理", desc: "甜感、圆润、糖浆感。", color: "var(--honey)" },
-  { name: "厌氧", desc: "强烈、复杂、实验感。", color: "var(--cocoa)" }
+  { name: "水洗", desc: "更清澈，像把风味边缘擦亮。", color: "var(--tea)" },
+  { name: "日晒", desc: "更饱满，果香和发酵甜会被放大。", color: "var(--cherry)" },
+  { name: "蜜处理", desc: "更柔软，甜感像被留在杯底。", color: "var(--honey)" },
+  { name: "厌氧", desc: "更外放，容易出现酒感、热带水果和强记忆点。", color: "var(--cocoa)" }
 ];
 
 const profiles = [
@@ -444,20 +519,20 @@ const indexGroups = [
 const demoRoutes = [
   {
     step: "01",
-    name: "浏览风味卡",
-    desc: "先看到精品咖啡不止苦和酸，而是一套可阅读的风味语言。",
+    name: "翻开风味卡",
+    desc: "先从 22 张卡里，看见咖啡不止苦和酸，而是一套可阅读的风味语言。",
     tab: "flavor"
   },
   {
     step: "02",
-    name: "收藏喜欢的味道",
-    desc: "用收藏模拟兴趣信号，把喜欢的风味组合沉淀下来。",
+    name: "收起喜欢的味道",
+    desc: "把想喝的组合放进书架，让味觉偏好开始留下痕迹。",
     tab: "flavor"
   },
   {
     step: "03",
-    name: "生成风味偏好",
-    desc: "从收藏里生成偏好画像，展示内容运营和用户分层的可能性。",
+    name: "读出风味签名",
+    desc: "从收藏里生成一份味觉签名，让内容资产和用户兴趣真正连起来。",
     tab: "preference"
   }
 ];
@@ -467,7 +542,7 @@ const topicPreviews = [
     id: "anaerobic",
     label: "NEXT ISSUE",
     name: "厌氧处理的果酒感",
-    desc: "从莓果、香槟到白兰地，理解发酵如何把咖啡推向更鲜明的记忆点。",
+    desc: "从莓果到香槟，再到白兰地：厌氧处理让咖啡出现近似果酒的明亮和微醺。",
     category: "莓果酒感",
     color: "var(--cherry)",
     cardNames: ["莓果酒香", "黄桃香槟", "樱桃白兰地", "酒香朗姆"],
@@ -481,7 +556,7 @@ const topicPreviews = [
     id: "yunnan",
     label: "ORIGIN NOTE",
     name: "云南的茶感与甜感",
-    desc: "用白桃、乌龙和蜂蜜做线索，读懂本土产地里更温柔的一面。",
+    desc: "从白桃、乌龙到蜂蜜，云南咖啡可以不只稳定，也可以很细腻。",
     category: "花香茶感",
     color: "var(--tea)",
     cardNames: ["蜂蜜乌龙", "白桃乌龙", "花香清茶", "玫瑰荔枝"],
@@ -495,7 +570,7 @@ const topicPreviews = [
     id: "comfort",
     label: "TASTE ROUTE",
     name: "低酸甜感路线",
-    desc: "为喜欢稳定、圆润、坚果可可调性的人，整理一条更舒服的风味路径。",
+    desc: "不追求强酸，而是把太妃、榛果、奶油和可可慢慢喝清楚。",
     category: "甜感柔和",
     color: "var(--honey)",
     cardNames: ["太妃榛果", "香草坚果", "榛果可可", "杏仁奶油"],
@@ -509,7 +584,7 @@ const topicPreviews = [
     id: "washed-clean",
     label: "PROCESS NOTE",
     name: "水洗咖啡的干净感",
-    desc: "从花香、红茶到青苹果，理解水洗处理如何让风味变得清澈、明亮、有结构。",
+    desc: "如果你喜欢茶感、花香和清晰酸质，水洗是最容易读懂的一条路线。",
     category: "明亮柑橘",
     color: "var(--citrus)",
     cardNames: ["花香清茶", "柑橘白花", "黑加仑红茶", "柠檬草青苹果"],
@@ -523,7 +598,7 @@ const topicPreviews = [
     id: "kenya-bright",
     label: "ORIGIN NOTE",
     name: "肯尼亚的明亮酸质",
-    desc: "用红苹果、黑加仑和红茶做入口，读懂肯尼亚咖啡里强结构、高生津的风味表达。",
+    desc: "红苹果、黑加仑、红茶，是肯尼亚咖啡最容易被记住的三条线索。",
     category: "产地代表",
     color: "#c05c3b",
     cardNames: ["红苹果枫糖", "黑加仑红茶", "柠檬草青苹果", "柑橘白花"],
@@ -536,6 +611,44 @@ const topicPreviews = [
 ];
 
 let activeFlavorCategory = "全部";
+let activeCoverSlide = 0;
+let coverSlideTimer;
+
+const coverSlides = [
+  {
+    photo: "assets/cover-hero.jpg",
+    alt: "山间咖啡产区里的一杯精品咖啡",
+    issue: "ISSUE 01 · THE BRIGHT NOTES",
+    title: "一杯咖啡里<br>明亮的那一部分",
+    sub: "在苦味之外，咖啡也会出现茉莉、柑橘、红茶、蜂蜜与热带水果。那些轻盈的香气，会在入口前先抵达。",
+    label: "FEATURED FLAVOR",
+    chips: ["茉莉", "佛手柑", "清茶"],
+    note: "从一杯像花茶一样干净的咖啡开始，重新认识“好喝”这件事。它不急着给你答案，只把花香、酸质和茶感，一层一层翻开。",
+    editorial: "本期像一本明亮风味的薄册。我们不从产区参数开始，而是从你真正喝到的味道开始：一口清茶感，一点柑橘香，和尾段慢慢留下的甜。"
+  },
+  {
+    photo: "assets/cover-alternative-1.png",
+    alt: "窗边手冲咖啡与铜壶蒸汽",
+    issue: "ISSUE 02 · BREWING MOMENTS",
+    title: "风味落进杯中<br>只差一次注水",
+    sub: "水温、研磨、时间和手势，会把同一支豆子带向不同的方向。有些香气，是在水流穿过滤纸的那一刻才被打开的。",
+    label: "FEATURED ROUTE",
+    chips: ["研磨", "注水", "萃取"],
+    note: "手冲不是复杂仪式，而是一种温柔的放大镜。它把花香放轻，把甜感拉长，也让一杯咖啡的性格慢慢显影。",
+    editorial: "这一页写给冲泡。同样的豆子，水流快一点，果酸会更明亮；萃取慢一点，甜感会更厚。风味不是固定答案，而是一次次微小选择的结果。"
+  },
+  {
+    photo: "assets/cover-alternative-2.png",
+    alt: "咖啡杯、豆子与植物手账静物",
+    issue: "ISSUE 03 · FLAVOR NOTEBOOK",
+    title: "把喝到的味道<br>收进一座图书馆",
+    sub: "茉莉、黑加仑、榛果、可可，不只是咖啡袋上的形容词。当它们被记录、归档、收藏，就会慢慢变成一个人的味觉地图。",
+    label: "FEATURED LIBRARY",
+    chips: ["风味词", "收藏", "偏好"],
+    note: "每一次收藏，都是一次很轻的自我表达。你以为只是喜欢某一杯咖啡，其实也在留下自己的风味线索。",
+    editorial: "风味图书馆不急着把咖啡讲成知识。它更像一本可以翻阅的手账：先记住喜欢的味道，再慢慢看见自己偏爱的酸质、甜感、茶感和余韵。"
+  }
+];
 
 function getPrimaryOrigin(origin) {
   return origin.split("/")[0].trim();
@@ -567,6 +680,72 @@ function renderAssetStats() {
       <strong>${stats.originCount}</strong>
       <span>产地线索</span>
     </div>`;
+}
+
+function renderCoverSlide(index = activeCoverSlide) {
+  const slide = coverSlides[index];
+  if (!slide) return;
+
+  const heroPhoto = document.getElementById("heroPhoto");
+  const heroIssue = document.getElementById("heroIssue");
+  const heroTitle = document.getElementById("heroTitle");
+  const heroSub = document.getElementById("heroSub");
+  const featuredLabel = document.getElementById("featuredLabel");
+  const featuredChips = document.getElementById("featuredChips");
+  const featuredNote = document.getElementById("featuredNote");
+  const coverEditorial = document.getElementById("coverEditorial");
+
+  if (heroPhoto) {
+    heroPhoto.src = slide.photo;
+    heroPhoto.alt = slide.alt;
+  }
+  if (heroIssue) heroIssue.textContent = slide.issue;
+  if (heroTitle) heroTitle.innerHTML = slide.title;
+  if (heroSub) heroSub.textContent = slide.sub;
+  if (featuredLabel) featuredLabel.textContent = slide.label;
+  if (featuredChips) {
+    featuredChips.innerHTML = slide.chips.map(chip => `<span class="chip">${chip}</span>`).join("");
+  }
+  if (featuredNote) featuredNote.textContent = slide.note;
+  if (coverEditorial) coverEditorial.textContent = slide.editorial;
+
+  document.querySelectorAll(".hero-dot").forEach((dot, dotIndex) => {
+    dot.classList.toggle("is-active", dotIndex === index);
+  });
+}
+
+function setCoverSlide(index, options = {}) {
+  activeCoverSlide = (index + coverSlides.length) % coverSlides.length;
+  renderCoverSlide(activeCoverSlide);
+
+  if (options.restartTimer !== false) {
+    startCoverSlideTimer();
+  }
+}
+
+function startCoverSlideTimer() {
+  clearInterval(coverSlideTimer);
+  coverSlideTimer = setInterval(() => {
+    setCoverSlide(activeCoverSlide + 1, { restartTimer: false });
+  }, 5600);
+}
+
+function setupCoverCarousel() {
+  const dotsRoot = document.getElementById("heroDots");
+  if (!dotsRoot) return;
+
+  dotsRoot.innerHTML = coverSlides.map((slide, index) => `
+    <button class="hero-dot" type="button" aria-label="查看封面 ${index + 1}"></button>
+  `).join("");
+
+  dotsRoot.querySelectorAll(".hero-dot").forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      setCoverSlide(index);
+    });
+  });
+
+  renderCoverSlide(0);
+  startCoverSlideTimer();
 }
 
 function getFamilyColor(familyName) {
@@ -682,6 +861,77 @@ function saveFlavors(savedList) {
   }
 }
 
+function getSaveToastMessage(card, savedCount, isSaved) {
+  if (!isSaved) {
+    return `已移出「${card.name}」：这条风味线索暂时收起。`;
+  }
+
+  if (savedCount === 1) {
+    return `第一条风味线索已出现：${card.flavorWords.join(" / ")}。`;
+  }
+
+  if (savedCount === 3) {
+    return "你的风味签名开始变清楚。";
+  }
+
+  if (savedCount > 3) {
+    return `已收藏「${card.name}」：风味书架更像你了。`;
+  }
+
+  return `已收藏「${card.name}」：你的书架多了一点${card.flavorWords.slice(0, 2).join("和")}。`;
+}
+
+const signatureProfiles = {
+  "花香茶感": {
+    name: "清茶花香型",
+    phrase: "明亮、干净，喜欢带空气感的花香和茶感。",
+    stamp: "BOTANICAL READER"
+  },
+  "明亮柑橘": {
+    name: "明亮酸质型",
+    phrase: "容易被清晰酸质、柑橘香和干净尾韵吸引。",
+    stamp: "BRIGHT ACIDITY"
+  },
+  "莓果酒感": {
+    name: "果酒记忆型",
+    phrase: "偏爱有记忆点的莓果、发酵甜和轻微微醺感。",
+    stamp: "FERMENTED FRUIT"
+  },
+  "热带果汁": {
+    name: "热带果汁型",
+    phrase: "喜欢香气外放、酸甜直接、像果汁一样饱满的咖啡。",
+    stamp: "JUICY ROUTE"
+  },
+  "甜感柔和": {
+    name: "温柔甜感型",
+    phrase: "更在意柔软甜感、圆润口感和不用解释的舒服。",
+    stamp: "SOFT SWEETNESS"
+  },
+  "坚果可可": {
+    name: "深色安定型",
+    phrase: "偏爱低酸、黑巧、坚果和更沉稳的深色甜感。",
+    stamp: "DARK COMFORT"
+  },
+  "产地代表": {
+    name: "产地探索型",
+    phrase: "会被产地个性、结构感和清楚的风味标识吸引。",
+    stamp: "ORIGIN SEEKER"
+  }
+};
+
+function getFlavorSignature(topGroup, topFamily, topWords, total) {
+  const profile = signatureProfiles[topGroup] || {
+    name: `${topFamily}读者`,
+    phrase: `更容易被「${topFamily}」吸引。`,
+    stamp: "LIVE PROFILE"
+  };
+
+  return {
+    ...profile,
+    note: `基于你收藏的 ${total} 张风味卡，我们读到一条清晰线索：你更容易被「${topFamily}」吸引。${topWords.join("、")} 是你目前最常选择的味觉关键词。`
+  };
+}
+
 /* ---------- 渲染：风味卡 ---------- */
 function renderFlavorCards(filterCategory = activeFlavorCategory) {
   activeFlavorCategory = filterCategory;
@@ -712,6 +962,7 @@ function renderFlavorCards(filterCategory = activeFlavorCategory) {
       </div>
       <div class="fc-body">
         <h3 class="fc-name">${c.name}</h3>
+        <p class="fc-line">${c.magazineLine}</p>
         <div class="fc-words">${c.flavorWords.map(w => `<span class="flavor-chip">${w}</span>`).join("")}</div>
         <p class="fc-meta"><b>产地</b> ${c.origin}<br><b>处理</b> ${c.process}</p>
         <p class="fc-desc">${c.description}</p>
@@ -732,13 +983,12 @@ function renderFlavorCards(filterCategory = activeFlavorCategory) {
         if (!savedFlavors.includes(card.name)) {
           savedFlavors.push(card.name);
         }
-        showSaveToast("已加入你的风味书架");
       } else {
         btn.textContent = "⌖";
         savedFlavors = savedFlavors.filter(name => name !== card.name);
-        showSaveToast("已移出风味书架");
       }
       saveFlavors(savedFlavors);
+      showSaveToast(getSaveToastMessage(card, savedFlavors.length, isSaved));
       renderFlavorShelf();
       renderProfiles();
 
@@ -819,8 +1069,8 @@ function renderTopicPreview() {
 
   topicRoot.innerHTML = `
     <div class="topic-head">
-      <h3 class="topic-title">下一期可以怎么读</h3>
-      <span class="topic-kicker">EDITOR'S ROUTES</span>
+      <h3 class="topic-title">编辑选题</h3>
+      <span class="topic-kicker">CURATED ROUTES</span>
     </div>
     <div class="topic-list">
       ${topicPreviews.map(topic => `
@@ -988,8 +1238,8 @@ function renderProfiles() {
   if (!savedCards.length) {
     profileRoot.innerHTML = `
       <div class="profile-empty">
-        <div class="profile-empty-title">先收藏几张风味卡</div>
-        <p>喜欢花香、果汁感，还是温暖的坚果可可？收藏会让这里慢慢长出你的风味小档案。</p>
+        <div class="profile-empty-title">先选几杯你想喝的</div>
+        <p>不用做测试。只要收藏几张想喝的风味卡，这里就会长出你的第一份味觉签名。</p>
       </div>
       ${profiles.map(p => `
     <div class="profile-card">
@@ -1010,7 +1260,7 @@ function renderProfiles() {
     </div>`).join("")}`;
 
     if (profileFoot) {
-      profileFoot.textContent = "未收藏时展示模拟画像；收藏后会切换为你的动态风味偏好。";
+      profileFoot.textContent = "未收藏时展示模拟画像；收藏后会切换为你的动态风味签名。";
     }
     return;
   }
@@ -1028,6 +1278,7 @@ function renderProfiles() {
   const topFamily = familyCounts[0][0];
   const topGroup = groupCounts[0][0];
   const topWords = wordCounts.slice(0, 4).map(([word]) => word);
+  const signature = getFlavorSignature(topGroup, topFamily, topWords, total);
   const bars = familyCounts.slice(0, 4).map(([family, count]) => ({
     label: family,
     pct: Math.round(count / total * 100),
@@ -1048,12 +1299,13 @@ function renderProfiles() {
     .slice(0, 3);
 
   profileRoot.innerHTML = `
-    <div class="profile-card">
+    <div class="profile-card live-signature-card">
       <div class="profile-head">
-        <span class="profile-name">${topGroup}读者</span>
-        <span class="profile-tag">LIVE PROFILE</span>
+        <span class="profile-name">${signature.name}</span>
+        <span class="profile-tag">${signature.stamp}</span>
       </div>
-      <p class="profile-note">基于你收藏的 ${total} 张风味卡生成。当前最明显的偏好是「${topFamily}」，常出现的风味线索包括 ${topWords.join("、")}。</p>
+      <div class="signature-line">你的风味签名：${signature.phrase}</div>
+      <p class="profile-note">${signature.note}</p>
       ${bars.map(b => `
         <div class="preference-bar">
           <div class="pb-top"><span>${b.label}</span><span class="pb-pct">${b.pct}%</span></div>
@@ -1076,7 +1328,7 @@ function renderProfiles() {
   });
 
   if (profileFoot) {
-    profileFoot.textContent = "偏好仅保存在本机浏览器，用于展示风味内容如何被沉淀成用户兴趣资产。";
+    profileFoot.textContent = "风味签名仅保存在本机浏览器，用于展示风味内容如何被沉淀成用户兴趣资产。";
   }
 }
 
@@ -1093,7 +1345,7 @@ function renderFlavorCompass(card) {
 
   compassRoot.innerHTML = `
     <div class="compass-head">
-      <span class="compass-title">风味坐标</span>
+      <span class="compass-title">这杯的味觉重心</span>
       <span class="compass-label">TASTE AXIS</span>
     </div>
     ${axes.map(axis => `
@@ -1103,12 +1355,33 @@ function renderFlavorCompass(card) {
       </div>`).join("")}`;
 }
 
+function renderTasteScene(card) {
+  const sceneRoot = document.getElementById("modalTasteScene");
+  if (!sceneRoot) return;
+
+  const scene = card.detail.tasteScene || [];
+  const labels = ["第一口", "中段", "尾韵"];
+  sceneRoot.innerHTML = `
+    <div class="taste-scene-head">
+      <span>三幕品鉴</span>
+      <small>FIRST / MIDDLE / FINISH</small>
+    </div>
+    <div class="taste-scene-grid">
+      ${labels.map((label, index) => `
+        <div class="taste-scene-item">
+          <strong>${label}</strong>
+          <p>${scene[index] || card.description}</p>
+        </div>`).join("")}
+    </div>`;
+}
+
 /* ---------- 渲染：索引 ---------- */
 function renderIndex() {
-  document.getElementById("indexGrid").innerHTML = indexGroups.map(g => {
+  document.getElementById("indexGrid").innerHTML = indexGroups.map((g, index) => {
     const count = flavorCards.filter(card => card.primaryFamily === g.name).length;
     return `
     <div class="index-group" data-family="${g.name}" style="--g-color:${g.color}">
+      <div class="ig-shelf">SHELF ${String(index + 1).padStart(2, "0")}</div>
       <div class="ig-name"><span>${g.name}</span><span class="ig-count">${count}</span></div>
       <div class="ig-words">${g.words.map(w => `<span class="ig-word">${w}</span>`).join("")}</div>
     </div>`;
@@ -1179,6 +1452,7 @@ function initModal() {
     document.getElementById("modalPhoto").src = card.photo;
     document.getElementById("modalPhoto").alt = card.name;
     document.getElementById("modalName").textContent = card.name;
+    document.getElementById("modalLine").textContent = card.magazineLine;
     document.getElementById("modalWords").innerHTML = card.flavorWords.map(w => `<span class="flavor-chip">${w}</span>`).join("");
     document.getElementById("modalOrigin").textContent = card.origin;
     document.getElementById("modalProcess").textContent = card.process;
@@ -1187,6 +1461,7 @@ function initModal() {
     document.getElementById("modalStory").textContent = card.detail.story;
     document.getElementById("modalBrew").textContent = card.detail.brew;
     renderFlavorCompass(card);
+    renderTasteScene(card);
     renderRelatedFlavors(index);
 
     modal.classList.add("is-active");
@@ -1203,7 +1478,7 @@ function renderRelatedFlavors(index) {
   relatedRoot.innerHTML = `
     <div class="modal-divider"></div>
     <div class="related-head">
-      <h4>继续阅读</h4>
+      <h4>如果你喜欢这一杯</h4>
       <span>SIMILAR NOTES</span>
     </div>
     <div class="related-list">
@@ -1236,6 +1511,7 @@ function setupCoverEntry() {
 
   startExplore.addEventListener("click", () => {
     flavorTabBtn.click();
+    showSaveToast("本期从 22 张风味卡开始。");
   });
 }
 
@@ -1261,6 +1537,7 @@ function setupIndexLink() {
           const targetCard = rail.querySelector(`.flavor-card[data-index="${cardIndex}"]`);
           if (targetCard) {
             targetCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            showSaveToast(`已定位到「${familyName}」家族的第一张卡。`);
 
             // 3. 高亮闪烁动画
             targetCard.classList.add("highlight-pulse");
@@ -1276,6 +1553,7 @@ function setupIndexLink() {
 
 /* ---------- init ---------- */
 renderAssetStats();
+setupCoverCarousel();
 renderDemoRoute();
 renderFlavorCards();
 renderTopicPreview();

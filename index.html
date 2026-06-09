@@ -27,24 +27,25 @@
             </header>
 
             <div class="hero">
-              <img class="hero-photo" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
+              <img class="hero-photo" id="heroPhoto" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
               <div class="hero-overlay"></div>
               <div class="hero-text">
-                <span class="issue-label">ISSUE 01 · 明亮风味</span>
-                <h1 class="hero-title">世界上那些<br>明亮的咖啡风味</h1>
-                <p class="hero-sub">一杯咖啡里，可能藏着花、柑橘、红茶、蜂蜜与热带水果。</p>
+                <span class="issue-label" id="heroIssue">ISSUE 01 · THE BRIGHT NOTES</span>
+                <h1 class="hero-title" id="heroTitle">一杯咖啡里<br>明亮的那一部分</h1>
+                <p class="hero-sub" id="heroSub">在苦味之外，咖啡也会出现茉莉、柑橘、红茶、蜂蜜与热带水果。</p>
               </div>
+              <div class="hero-dots" id="heroDots" aria-label="封面切换"></div>
             </div>
 
             <div class="featured">
-              <span class="featured-label">FEATURED FLAVOR</span>
-              <div class="featured-chips">
+              <span class="featured-label" id="featuredLabel">FEATURED FLAVOR</span>
+              <div class="featured-chips" id="featuredChips">
                 <span class="chip">茉莉</span>
                 <span class="chip">佛手柑</span>
                 <span class="chip">清茶</span>
               </div>
-              <p class="featured-note">本期带你走进一杯像花茶一样干净、明亮的咖啡。</p>
-              <p class="cover-positioning">一本关于精品咖啡风味的数字杂志，也是一套用户兴趣运营样本。</p>
+              <p class="featured-note" id="featuredNote">从一杯像花茶一样干净的咖啡开始，重新认识“好喝”这件事。</p>
+              <p class="cover-positioning" id="coverEditorial">本期像一本明亮风味的薄册。我们不从产区参数开始，而是从你真正喝到的味道开始：一口清茶感，一点柑橘香，和尾段慢慢留下的甜。</p>
               <div class="cover-stats" id="assetStats" aria-label="风味图书馆内容统计">
                 <div class="cover-stat">
                   <strong>22</strong>
@@ -60,8 +61,8 @@
                 </div>
               </div>
               <div class="cover-actions">
-                <button class="cover-cta" id="startExplore" type="button">进入本期风味</button>
-                <span class="cover-action-note">收藏喜欢的组合，沉淀自己的风味偏好。</span>
+                <button class="cover-cta" id="startExplore" type="button">翻开本期风味</button>
+                <span class="cover-action-note">每一次收藏，都会让你的风味画像更清楚一点。</span>
               </div>
               <div class="reading-route" id="demoRoute"><!-- route injected by app.js --></div>
             </div>
@@ -73,7 +74,7 @@
           <div class="screen-inner">
             <span class="section-label">FLAVOR CARDS</span>
             <h2 class="section-title">风味组合卡</h2>
-            <p class="section-lead">像翻一本杂志、收一套卡片那样，浏览不同产地与处理法带来的风味。</p>
+            <p class="section-lead">每张卡是一种味觉组合：风味词、产地和处理法，会一起决定这杯咖啡的性格。</p>
           </div>
 
           <!-- 横向分类 chips -->
@@ -91,7 +92,7 @@
           </div>
 
           <div class="flavor-rail" id="flavorRail"><!-- cards injected by app.js --></div>
-          <p class="rail-hint">← 横向滑动浏览风味卡 →</p>
+          <p class="rail-hint">横向滑动，像翻一盒彩色风味卡。</p>
           <div class="topic-preview" id="topicPreview"><!-- topics injected by app.js --></div>
         </section>
 
@@ -99,23 +100,23 @@
         <section class="tab-panel" data-panel="journey">
           <div class="screen-inner">
             <span class="section-label">FROM BEAN TO CUP</span>
-            <h2 class="section-title">风味链路</h2>
-            <p class="journey-quote">风味不是被添加进去的。它来自产地、处理法、烘焙与冲泡之间，一连串微小选择的叠加。</p>
+            <h2 class="section-title">味道从哪里来</h2>
+            <p class="journey-quote">咖啡的花香、果酸和甜感不是被添加进去的。它们来自产地、处理法、烘焙和冲泡之间，一连串微小选择。</p>
           </div>
 
           <div class="journey-hero">
-            <img src="assets/journey-hero.jpg" alt="从产地到杯中的风味手帐" loading="lazy">
+            <img src="assets/journey-hero.jpg" alt="从产地到杯中的风味手帐" loading="eager">
           </div>
 
           <div class="journey-flow">
-            <span>产地</span><i>→</i><span>品种</span><i>→</i><span>处理法</span><i>→</i><span>烘焙</span><i>→</i><span>研磨</span><i>→</i><span>冲泡</span><i>→</i><span>杯中风味</span>
+            <span>产地</span><i>→</i><span>品种</span><i>→</i><span>处理法</span><i>→</i><span>烘焙</span><i>→</i><span>研磨</span><i>→</i><span>冲泡</span><i>→</i><span>你喝到的味道</span>
           </div>
 
           <div class="journey-steps" id="journeySteps"><!-- steps injected --></div>
 
           <div class="screen-inner">
             <span class="section-label">PROCESS</span>
-            <h3 class="sub-title">处理法，如何改变一杯咖啡</h3>
+            <h3 class="sub-title">处理法，如何改变嘴里的风味</h3>
           </div>
           <div class="process-list" id="processList"><!-- process injected --></div>
         </section>
@@ -124,10 +125,10 @@
         <section class="tab-panel" data-panel="preference">
           <div class="screen-inner">
             <span class="section-label">FLAVOR PROFILE</span>
-            <h2 class="section-title">你的风味偏好</h2>
-            <p class="section-lead">收藏与浏览，会慢慢沉淀成一份属于你的风味小档案。</p>
+            <h2 class="section-title">你的风味签名</h2>
+            <p class="section-lead">收藏几张喜欢的风味卡，系统会试着读出你的味觉倾向。</p>
             <div class="profile-insight">
-              收藏行为可以沉淀为风味偏好，未来可用于专题运营、内容推荐和用户分层。
+              在这个 demo 里，收藏就是最轻的兴趣信号：它让风味从内容，变成可以被理解的偏好。
             </div>
           </div>
           <div class="flavor-shelf" id="flavorShelf"><!-- saved shelf injected --></div>
@@ -139,11 +140,11 @@
         <section class="tab-panel" data-panel="index">
           <div class="screen-inner">
             <span class="section-label">THE LIBRARY</span>
-            <h2 class="section-title">风味索引</h2>
-            <p class="section-lead">八个一级风味家族，一座可以不断生长的风味图书馆。</p>
+            <h2 class="section-title">风味藏书目录</h2>
+            <p class="section-lead">把茉莉、柑橘、莓果、可可这些味觉线索归档，风味就不再只是零散的形容词。</p>
           </div>
           <div class="index-grid" id="indexGrid"><!-- index injected --></div>
-          <p class="index-foot">风味图书馆 · 持续更新中</p>
+          <p class="index-foot">每一张新卡，都会让这座图书馆多一条味觉路径。</p>
         </section>
 
       </div>
@@ -177,6 +178,7 @@
             <img id="modalPhoto" src="" alt="风味图片">
             <div class="modal-hero-text">
               <h3 id="modalName"></h3>
+              <p class="modal-line" id="modalLine"></p>
               <div class="modal-words" id="modalWords"></div>
             </div>
           </div>
@@ -188,14 +190,15 @@
               <div class="meta-item"><strong>粉水比</strong><span id="modalRatio"></span></div>
             </div>
             <div class="flavor-compass" id="modalCompass"><!-- flavor coordinate injected --></div>
+            <div class="modal-taste-scene" id="modalTasteScene"><!-- taste scene injected --></div>
             <div class="modal-divider"></div>
             <div class="modal-story">
-              <h4>风味手记</h4>
+              <h4>这杯像什么</h4>
               <p id="modalStory"></p>
             </div>
             <div class="modal-divider"></div>
             <div class="modal-brew">
-              <h4>冲煮建议</h4>
+              <h4>怎样让它更好喝</h4>
               <p id="modalBrew"></p>
             </div>
             <div class="modal-related" id="modalRelated"><!-- related flavors injected --></div>
