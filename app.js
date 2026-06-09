@@ -613,6 +613,7 @@ const topicPreviews = [
 let activeFlavorCategory = "全部";
 let activeCoverSlide = 0;
 let coverSlideTimer;
+const preloadedCoverImages = new Map();
 
 const coverSlides = [
   {
@@ -652,6 +653,16 @@ const coverSlides = [
 
 function getPrimaryOrigin(origin) {
   return origin.split("/")[0].trim();
+}
+
+function preloadCoverSlides() {
+  coverSlides.forEach(slide => {
+    const img = new Image();
+    img.decoding = "async";
+    img.loading = "eager";
+    img.src = slide.photo;
+    preloadedCoverImages.set(slide.photo, img);
+  });
 }
 
 function getFlavorAssetStats() {
@@ -696,8 +707,17 @@ function renderCoverSlide(index = activeCoverSlide) {
   const coverEditorial = document.getElementById("coverEditorial");
 
   if (heroPhoto) {
+    const cachedImage = preloadedCoverImages.get(slide.photo);
+    if (!cachedImage?.complete) {
+      heroPhoto.classList.add("is-loading");
+    }
     heroPhoto.src = slide.photo;
     heroPhoto.alt = slide.alt;
+    if (heroPhoto.complete) {
+      heroPhoto.classList.remove("is-loading");
+    } else {
+      heroPhoto.onload = () => heroPhoto.classList.remove("is-loading");
+    }
   }
   if (heroIssue) heroIssue.textContent = slide.issue;
   if (heroTitle) heroTitle.innerHTML = slide.title;
@@ -746,6 +766,52 @@ function setupCoverCarousel() {
 
   renderCoverSlide(0);
   startCoverSlideTimer();
+}
+
+function setupCoverSwipe() {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  let startX = 0;
+  let startY = 0;
+  let tracking = false;
+  let activePointerId = null;
+
+  const stopTracking = () => {
+    if (activePointerId !== null && hero.hasPointerCapture?.(activePointerId)) {
+      hero.releasePointerCapture(activePointerId);
+    }
+    tracking = false;
+    activePointerId = null;
+    hero.classList.remove("is-dragging");
+  };
+
+  hero.addEventListener("pointerdown", event => {
+    if (event.target.closest(".hero-dot")) return;
+    tracking = true;
+    activePointerId = event.pointerId;
+    startX = event.clientX;
+    startY = event.clientY;
+    hero.setPointerCapture?.(event.pointerId);
+    hero.classList.add("is-dragging");
+  });
+
+  hero.addEventListener("pointerup", event => {
+    if (!tracking) return;
+
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
+    const isHorizontalSwipe = Math.abs(deltaX) > 42 && Math.abs(deltaX) > Math.abs(deltaY) * 1.15;
+
+    if (isHorizontalSwipe) {
+      setCoverSlide(activeCoverSlide + (deltaX < 0 ? 1 : -1));
+    }
+
+    stopTracking();
+  });
+
+  hero.addEventListener("pointercancel", stopTracking);
+  hero.addEventListener("pointerleave", stopTracking);
 }
 
 function getFamilyColor(familyName) {
@@ -1552,8 +1618,10 @@ function setupIndexLink() {
 }
 
 /* ---------- init ---------- */
+preloadCoverSlides();
 renderAssetStats();
 setupCoverCarousel();
+setupCoverSwipe();
 renderDemoRoute();
 renderFlavorCards();
 renderTopicPreview();

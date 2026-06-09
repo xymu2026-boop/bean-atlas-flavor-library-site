@@ -7,6 +7,9 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/cover-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/cover-brewing-moments.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="assets/cover-flavor-notebook.jpg" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -27,13 +30,14 @@
             </header>
 
             <div class="hero">
-              <img class="hero-photo" id="heroPhoto" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager">
+              <img class="hero-photo" id="heroPhoto" src="assets/cover-hero.jpg" alt="一杯被晨光照亮的精品咖啡" loading="eager" fetchpriority="high" decoding="async">
               <div class="hero-overlay"></div>
               <div class="hero-text">
                 <span class="issue-label" id="heroIssue">ISSUE 01 · THE BRIGHT NOTES</span>
                 <h1 class="hero-title" id="heroTitle">一杯咖啡里<br>明亮的那一部分</h1>
                 <p class="hero-sub" id="heroSub">在苦味之外，咖啡也会出现茉莉、柑橘、红茶、蜂蜜与热带水果。</p>
               </div>
+              <div class="hero-swipe-cue" aria-hidden="true"><span></span></div>
               <div class="hero-dots" id="heroDots" aria-label="封面切换"></div>
             </div>
 
