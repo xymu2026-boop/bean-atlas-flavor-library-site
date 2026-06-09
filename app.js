@@ -705,7 +705,7 @@ function renderFlavorCards(filterCategory = activeFlavorCategory) {
     <article class="flavor-card" data-index="${c.originalIndex}">
       <div class="fc-photo">
         <span class="fc-accent" style="background:${c.accent}"></span>
-        <img src="${c.photo}" alt="${c.name}" loading="lazy">
+        <img src="${c.photo}" alt="${c.name}" loading="eager" decoding="async">
         <button class="bookmark-button ${isSaved ? 'is-saved' : ''}" data-card="${c.originalIndex}" aria-label="收藏 ${c.name}">
           ${isSaved ? '★' : '⌖'}
         </button>
@@ -880,7 +880,7 @@ function openTopicIssue(topicId) {
     <div class="issue-card-list">
       ${cards.map(card => `
         <article class="issue-card" data-card="${card.originalIndex}">
-          <img src="${card.photo}" alt="${card.name}" loading="lazy">
+          <img src="${card.photo}" alt="${card.name}" loading="eager" decoding="async">
           <div class="issue-card-body">
             <div class="issue-card-name">${card.name}</div>
             <div class="issue-card-meta">${card.flavorWords.join(" / ")}<br>${getPrimaryOrigin(card.origin)} · ${card.process}</div>
@@ -926,7 +926,7 @@ function closeTopicIssue() {
 function renderJourney() {
   document.getElementById("journeySteps").innerHTML = journeySteps.map(s => `
     <div class="journey-step">
-      <img src="${s.photo}" alt="${s.name}" loading="lazy">
+      <img src="${s.photo}" alt="${s.name}" loading="eager" decoding="async">
       <div class="js-body">
         <div class="js-label">${s.label}</div>
         <div class="js-name">${s.name}</div>
@@ -962,7 +962,7 @@ function renderFlavorShelf() {
         <div class="shelf-list">
           ${savedCards.map(card => `
             <article class="shelf-item" data-card="${card.originalIndex}">
-              <img src="${card.photo}" alt="${card.name}" loading="lazy">
+              <img src="${card.photo}" alt="${card.name}" loading="eager" decoding="async">
               <div class="shelf-item-name">${card.name}</div>
               <div class="shelf-item-note">${card.flavorWords.slice(0, 2).join(" / ")}</div>
             </article>`).join("")}
@@ -1209,7 +1209,7 @@ function renderRelatedFlavors(index) {
     <div class="related-list">
       ${relatedCards.map(card => `
         <article class="related-card" data-card="${card.originalIndex}">
-          <img src="${card.photo}" alt="${card.name}" loading="lazy">
+          <img src="${card.photo}" alt="${card.name}" loading="eager" decoding="async">
           <div>
             <div class="related-name">${card.name}</div>
             <div class="related-reason">${card.reason}</div>
